@@ -69,11 +69,28 @@
         Historically, models for large scale structure have typically fallen into two categories: perturbation theory, or simulation based. 
         Perturbation theory is inexpensive and flexibile, but is unable to model many scales of interest. Simulations are highly predictive,
         but are very expensive and may suffer from numerical artifacts. Along with collaborators, I am developing a new model that takes the 
-        best attributes from perturbation theory and simulations and combines them into a new framework 
-        called <a href="https://arxiv.org/abs/2101.11014"> hybrid effective field theory</a>.
+        best attributes from perturbation theory and simulations and combines them into a new framework called <a href="https://arxiv.org/abs/2101.11014"> hybrid effective field theory</a>.
+        I recently released a <a href="https://arxiv.org/abs/2303.09762"> public implementation of HEFT</a>, including the effects of massive neutrinos that is now being applied to analyses in DESI, DES and ACT.
 	</p>
 </div>
 <br>
+
+<div class="title">
+	<p >
+        <h2 style="font-family:monospace">Zel'dovich Control Variates</h2>    
+        <p><img src="images/zcv.jpg" width="500" alt="desi"/>
+        One of the main issues plaguing the use of simulations in cosmology is the statistical uncertainty in simulation predictions due to
+        the finite volumes of the cosmos that we simulate. People have played games in order to partially remove this uncertainty beginning
+        almost at the time of the first cosmological simulations. Collaborators and I have devised a <a href="https://arxiv.org/abs/2210.14239"nearly optimal</a> <a href="https://arxiv.org/abs/2205.15327">technique</a> to remove this
+        variance by making use of a statistical technique called control variates. We first run a full cosmological simulation, and pair this
+        with a fast, Zel&apos dovich approximation simulation where we simply move particles in straight lines! This simple simulation is
+        surprisingly correlated with the full simulation, and we can use this fact, along with our ability to analytically predict statistics
+        under the Zel&apos dovich approximation, in order to remove as much statistical uncertainty as possible. This technique is already
+	helping us improve our forward models in <a href="https://arxiv.org/abs/2308.12343" DESI</a>, and we&apos re just getting started!
+	</p>
+</div>
+<br>
+
 
 <div class="title">
 	<p>
