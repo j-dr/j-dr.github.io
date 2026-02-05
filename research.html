@@ -1,104 +1,181 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-  "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Research</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research projects in cosmology, dark energy, and large-scale structure.">
+    <title>Research - Joseph DeRose</title>
   </head>
+  <body>
 
 <style type="text/css">
-.title {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 12pt;
+    color: #000;
+    line-height: 1.6;
+    background: #fff;
+  }
+
+  .title {
     text-align: center;
     width: 800px;
-    margin:auto;
-}
+    max-width: 90%;
+    margin: 0 auto;
+  }
 
-.title img {
-
+  .title img {
     display: block;
     margin: 0 auto;
-}
+    max-width: 100%;
+    height: auto;
+  }
 
-.monospace {
-   font-family: monospace;
-}
+  .nav {
+    word-spacing: 42px;
+    font-size: 120%;
+    margin: 20px 0;
+  }
 
-.italic {
-   font-style: italic;
-}
+  .nav a {
+    color: #000;
+    text-decoration: none;
+  }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
+  .nav a:hover {
+    text-decoration: underline;
+  }
 
+  h2 {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18pt;
+    margin: 20px 0 15px 0;
+  }
+
+  .project {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project h2 {
+    text-align: center;
+    width: 100%;
+  }
+
+  .project p {
+    font-size: 12pt;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 600px;
+    border: 2px solid #333;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+
+  .monospace {
+    font-family: 'Consolas', 'Monaco', monospace;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+  }
+
+  a:hover {
+    background-color: #f0f0f0;
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      width: 95%;
+    }
+
+    .nav {
+      word-spacing: 20px;
+      font-size: 100%;
+    }
+
+    .center {
+      width: 90%;
+    }
+  }
 </style>
 
 <div class="title">
-	<p style="word-spacing:42px; font-size:120%; font-family:consolas">
-	<a href="index.html">Home</a> <a href="research.html">Research</a> <a href="images/cv.pdf">CV</a> <a href="https://github.com/j-dr">Code</a> 
+	<p class="nav monospace">
+	<a href="index.html">Home</a> <a href="research.html">Research</a> <a href="images/cv.pdf">CV</a> <a href="https://github.com/j-dr">Code</a>
 	</p>
 </div>
 
-<div class="title">
-    <h2 style="font-family:monospace">Dark Energy Spectroscopic Instrument (DESI)</h2>
-	<p><img src="images/desi.jpg" width="500" alt="desi"/>
-        <a href="https://www.desi.lbl.gov/">DESI</a> is mapping the three dimensional positions of tens of millions of galaxies over the next five years. 
-        I'm excited about the prospects of cross-correlating weak-gravitational lensing with DESI galaxies 
-        to provide a precise test of gravity on cosmological scales. We took a first step towards this goal with a
-        <a href="https://arxiv.org/abs/2111.09898"> recent analysis</a> cross-correlating DESI galaxy positions with lensing measured by the Planck satellite.
+<div class="title project">
+    <h2>Dark Energy Spectroscopic Instrument (DESI)</h2>
+	<p><img src="images/desi.jpg" width="500" alt="DESI project"/>
+        <a href="https://www.desi.lbl.gov/">DESI</a> is mapping the three-dimensional positions of tens of millions of galaxies over five years, providing unprecedented constraints on the expansion history of the universe.
+        I'm particularly focused on cross-correlating weak-gravitational lensing—the subtle bending of light as it travels through the universe—with DESI galaxy positions. This combination provides a powerful test of gravity and dark energy on cosmological scales.
+        We demonstrated the potential of this approach in a <a href="https://arxiv.org/abs/2111.09898">recent analysis</a> that cross-correlated DESI Early Data Release galaxy positions with weak lensing measurements from the Planck satellite, finding results consistent with general relativity and the standard cosmological model.
 	</p>
 </div>
 <br>
-<div class="title">
-	<p >
-    <h2 style="font-family:monospace">The Dark Energy Survey (DES)</h2>    
-        <p><img src="images/desy3.jpg" width="500" alt="des"/>
-        <a href="https://www.darkenergysurvey.org/">DES</a> is a photometric galaxy survey designed deliver precision cosmological constraints by 
-        measuring weak-gravitational lensing via the correlated distortion of galaxy shapes. I have been heavily involved in many facets of 
-        the cosmological analyses of the first <a href="https://arxiv.org/abs/2105.13549">three years of DES data</a>, resulting in some of the tightest constraints on the growth of cosmic structure to date.
+<div class="title project">
+    <h2>The Dark Energy Survey (DES)</h2>
+    <p><img src="images/desy3.jpg" width="500" alt="Dark Energy Survey project"/>
+        <a href="https://www.darkenergysurvey.org/">DES</a> is a large-scale photometric survey spanning 5,000 square degrees that delivers precision cosmological constraints by measuring the weak gravitational lensing signatures imprinted on galaxy shapes by cosmic structures.
+        I have been heavily involved in many aspects of the cosmological analyses of the <a href="https://arxiv.org/abs/2105.13549">first three years of DES data</a>, including the three-by-two-point correlation analysis (combining galaxy clustering, galaxy lensing, and cosmic shear).
+        The DES Y3 results represent some of the tightest constraints on the growth of cosmic structure and the properties of dark energy, with implications for fundamental physics at the largest scales.
 	</p>
 </div>
 <br>
 
-<div class="title">
-	<p >
-        <h2 style="font-family:monospace">Hybrid Effective Field Theory</h2>    
-        <p><img src="images/heft.jpeg" width="500" alt="heft"/>
-        Historically, models for large scale structure have typically fallen into two categories: perturbation theory, or simulation based. 
-        Perturbation theory is inexpensive and flexibile, but is unable to model many scales of interest. Simulations are highly predictive,
-        but are very expensive and may suffer from numerical artifacts. Along with collaborators, I am developing a new model that takes the 
-        best attributes from perturbation theory and simulations and combines them into a new framework called <a href="https://arxiv.org/abs/2101.11014"> hybrid effective field theory</a>.
-        I recently released a <a href="https://arxiv.org/abs/2303.09762"> public implementation of HEFT</a>, including the effects of massive neutrinos that is now being applied to analyses in DESI, DES and ACT.
+<div class="title project">
+    <h2>Hybrid Effective Field Theory</h2>
+    <p><img src="images/heft.jpeg" width="500" alt="Hybrid Effective Field Theory visualization"/>
+        Historically, models for large-scale structure fall into two categories: perturbation theory-based approaches, which are analytically tractable and computationally fast but limited to quasi-linear scales; and simulation-based methods, which capture complex nonlinear physics but are computationally expensive and prone to noise from finite simulation volumes.
+        Along with collaborators, I developed <a href="https://arxiv.org/abs/2101.11014">Hybrid Effective Field Theory (HEFT)</a>, which combines the strengths of both approaches—leveraging simulation-calibrated perturbation theory to capture nonlinear effects accurately across a broad range of scales while maintaining analytical flexibility.
+        I released a <a href="https://arxiv.org/abs/2303.09762">public HEFT implementation</a> that includes sophisticated treatments of massive neutrino effects, which is now actively applied to cosmological analyses in DESI, DES, and ACT collaborations, enabling tighter constraints on fundamental physics.
 	</p>
 </div>
 <br>
 
-<div class="title">
-	<p >
-        <h2 style="font-family:monospace">Zel'dovich Control Variates</h2>    
-        <p><img src="images/zcv.jpg" width="500" alt="zcv"/>
-        One of the main issues plaguing the use of simulations in cosmology is the statistical uncertainty in simulation predictions due to
-        the finite volumes of the cosmos that we simulate. People have played games in order to partially remove this uncertainty beginning
-        almost at the time of the first cosmological simulations. Collaborators and I have devised a <a href="https://arxiv.org/abs/2210.14239">nearly optimal</a> <a href="https://arxiv.org/abs/2205.15327">technique</a> to remove this
-        variance by making use of a statistical technique called control variates. We first run a full cosmological simulation, and pair this
-        with a fast, Zel&apos;dovich approximation simulation where we simply move particles in straight lines! This simple simulation is
-        surprisingly correlated with the full simulation, and we can use this fact, along with our ability to analytically predict statistics
-        under the Zel&apos;dovich approximation, in order to remove as much statistical uncertainty as possible. This technique is already
-	helping us improve our forward models in <a href="https://arxiv.org/abs/2308.12343">DESI</a>, and we&apos;re just getting started!
+<div class="title project">
+    <h2>Zel'dovich Control Variates</h2>
+    <p><img src="images/zcv.jpg" width="500" alt="Zel'dovich Control Variates visualization"/>
+        A major limitation of cosmological simulations is the statistical uncertainty arising from simulating finite volumes—we can only simulate small patches of the universe, introducing noise in our predictions.
+        My collaborators and I developed a <a href="https://arxiv.org/abs/2210.14239">theoretically near-optimal</a> variance reduction technique based on <a href="https://arxiv.org/abs/2205.15327">control variates</a>, a classical statistical method.
+        The key insight is surprisingly simple: we run a full cosmological N-body simulation alongside a fast Zel&apos;dovich approximation—a linear theory where particles move in straight lines. Despite its simplicity, the Zel&apos;dovich simulation is highly correlated with the full simulation, and we can analytically predict its statistics.
+        By pairing these simulations, we can remove much of the noise from the full simulation, dramatically improving the precision of cosmological predictions. This technique is already enhancing our <a href="https://arxiv.org/abs/2308.12343">DESI analyses</a> and has broad applications across the field.
 	</p>
 </div>
 <br>
 
 
-<div class="title">
-	<p>
-        <h2 style="font-family:monospace">ML Accelerated Simulations</h2>    
-        <p><img src="images/buzzard.png" width="500" alt="buzzard"/>
-        Cosmology is, by nature, a highly simulation dependent field. Breakthroughs are often made when new computing capability becomes
-        available, enabling simulations that could not previously been run. Much of my work is focused on using modern data science techniques
-        to create more realistic simulations, thus enabling new science with galaxy and cosmic microwave background surveys.
+<div class="title project">
+    <h2>ML Accelerated Simulations</h2>
+    <p><img src="images/buzzard.png" width="500" alt="ML Accelerated Simulations visualization"/>
+        Cosmology is fundamentally a simulation-dependent field—our ability to test theories about dark energy and gravity hinges on comparing observations to realistic predictions from N-body simulations of cosmic structure formation.
+        However, running high-resolution simulations across the range of physical models we need to explore remains computationally expensive. Much of my work focuses on leveraging modern machine learning and data science techniques to accelerate and enhance simulations.
+        This includes developing surrogate models that can quickly predict simulation outputs, improving the realism of simulations to better match observations from surveys like DESI and the CMB, and enabling faster exploration of parameter space to constrain fundamental physics.
 	</p>
 </div>
 <br>

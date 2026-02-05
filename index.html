@@ -1,85 +1,177 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-  "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-	<title>Joseph DeRose</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Joseph DeRose - Assistant Scientist at Brookhaven National Laboratory, specializing in cosmology, dark energy, and large-scale structure.">
+    <title>Joseph DeRose - Cosmologist</title>
   </head>
+  <body>
 
 <style type="text/css">
-.title {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 12pt;
+    color: #000;
+    line-height: 1.6;
+    background: #fff;
+  }
+
+  .title {
     text-align: center;
     width: 800px;
-    margin:auto;
-}
+    max-width: 90%;
+    margin: 0 auto;
+  }
 
-.title img {
-
+  .title img {
     display: block;
     margin: 0 auto;
-}
+    max-width: 100%;
+    height: auto;
+  }
 
-.monospace {
-   font-family: monospace;
-}
+  .nav {
+    word-spacing: 42px;
+    font-size: 120%;
+    margin: 20px 0;
+  }
 
-.italic {
-   font-style: italic;
-}
+  .nav a {
+    color: #000;
+    text-decoration: none;
+  }
 
+  .nav a:hover {
+    text-decoration: underline;
+  }
 
+  h1 {
+    font-size: 25pt;
+    margin: 20px 0;
+  }
+
+  .monospace {
+    font-family: 'Consolas', 'Monaco', monospace;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .contact-info {
+    font-size: 12pt;
+    margin: 15px 0;
+  }
+
+  .contact-info a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  .position-info {
+    width: 700px;
+    max-width: 90%;
+    font-size: 12pt;
+    text-align: center;
+    margin: 20px auto;
+    line-height: 1.8;
+  }
+
+  .position-info b {
+    font-weight: bold;
+  }
+
+  .bio {
+    width: 800px;
+    max-width: 90%;
+    font-size: 12pt;
+    margin: 0 auto;
+    text-align: justify;
+    line-height: 1.8;
+    border: 2px solid #333;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+
+  .bio a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+  }
+
+  .bio a:hover {
+    background-color: #e8e8e8;
+  }
+
+  @media (max-width: 768px) {
+    .title, .position-info, .bio {
+      width: 95%;
+    }
+
+    .nav {
+      word-spacing: 20px;
+      font-size: 100%;
+    }
+  }
 </style>
 
 <div class="title">
-	<p style="word-spacing:42px; font-size:120%; font-family:consolas">
-	<a href="index.html">Home</a> <a href="research.html">Research</a> <a href="images/cv.pdf">CV</a> <a href="https://github.com/j-dr">Code</a> 
+	<p class="nav monospace">
+	<a href="index.html">Home</a> <a href="research.html">Research</a> <a href="images/cv.pdf">CV</a> <a href="https://github.com/j-dr">Code</a>
 	</p>
 </div>
 
 
 <div class="title">
-    <p style="font-size: 25pt; color:black; text-align: center; font-family:consolas;">
-   <span class="monospace">Joseph DeRose</span>
+    <h1 class="monospace">Joseph DeRose</h1>
+    <img src="images/headshot.jpg" alt="Joseph DeRose" width="300"/>
+    <br>
+    <br>
+    <p class="contact-info monospace">
+      <b><span class="italic">email</span></b>: jderose at bnl dot gov
+      <br>
+      <b><span class="italic">github</span></b>: <a href="https://github.com/j-dr/">github.com/j-dr</a>
+      <br>
     </p>
-       <img src="images/headshot.jpg" alt="img" width="400"/>
-    <br>
-    <br>
-    <p style="font-size: 12pt; color:black; text-align: center; font-family:consolas;">
-      <span class="italic">email</span>: <span class="monospace">jderose at bnl dot gov</span>
-      <br>
-      <span class="italic">github</span>: <a href ="https://github.com/j-dr/"><span class="monospace">github.com/j-dr</span></a>
-      <br>
-    </p>    
-
-
 </div>
 
 
-<div class = "title" style="width:700px; font-size: 12pt; color:black; text-align: center; font-family:consolas;">
+<div class="position-info monospace">
   <b>Current position:</b> Assistant Scientist, Brookhaven National Laboratory
   <br>
   <b>Education:</b> Ph.D., Physics, Stanford University (2019)
   <br>
-  <b>Research interests:</b>  
+  <b>Research interests:</b>
 </div>
 
 
-<div style="width:800px; font-size: 12pt; color:black; font-family:consolas; margin:auto; text-align: justify">
+<div class="bio monospace">
 <br>
 What is the physics governing the accelerated expansion of the universe, dark matter and cosmic inflation?
 I use a combination of cosmological data-analysis, simulation and theory to distill massive galaxy survey
-and cosmic microwave background data sets into insight into these questions. 
+and cosmic microwave background data sets into insight into these questions.
 
 <br>
 <br>
-Much of the science I do is enabled by the contributions of scientists in a number of large collaborations, including the <a href="https://www.darkenergysurvey.org/">Dark Energy Survey</a>, 
-<a href="https://www.desi.lbl.gov/">Dark Energy Spectroscopic Instrument</a> and the <a href="https://lsstdesc.org/">Rubin Observatory Legacy Survey of Space and Time Dark Energy Science Collaboration
-</a>. 
-
+Much of the science I do is enabled by the contributions of scientists in a number of large collaborations, including the <a href="https://www.darkenergysurvey.org/">Dark Energy Survey</a>,
+<a href="https://www.desi.lbl.gov/">Dark Energy Spectroscopic Instrument</a> and the <a href="https://lsstdesc.org/">Rubin Observatory Legacy Survey of Space and Time Dark Energy Science Collaboration</a>.
 
 <br>
 <br>
 
-</dv>
+</div>
 
   </body>
 </html>
