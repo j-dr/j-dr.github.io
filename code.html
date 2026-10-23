@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code &amp; Data · Joseph DeRose</title>
+  <meta name="description" content="Public code and simulation data from Joseph DeRose: gholax, aemulus_heft, pyaddgals, Buzzard and Aemulus.">
+  <meta property="og:title" content="Code &amp; Data · Joseph DeRose">
+  <meta property="og:description" content="Public cosmology code and simulation data releases.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80' font-family='monospace'>jd</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="site">
+  <a class="name" href="index.html">Joseph DeRose</a>
+  <nav>
+    <ul>
+      <li><a href="index.html">home</a></li>
+      <li><a href="research.html">research</a></li>
+      <li><a href="publications.html">publications</a></li>
+      <li><a href="students.html">students</a></li>
+      <li><a href="code.html" aria-current="page">code &amp; data</a></li>
+      <li><a href="images/cv.pdf">cv</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>Code &amp; data</h1>
+  <p class="muted">Public software and simulation data from my research. More code is at <a href="https://github.com/j-dr">github.com/j-dr</a>.</p>
+
+  <h2>Code</h2>
+  <ul class="entries">
+    <li>
+      <div class="title"><a href="https://github.com/j-dr/gholax">gholax</a></div>
+      <div>
+        Differentiable cosmology likelihoods in JAX, built on fast surrogate models.
+        Because it is differentiable, it works with gradient-based samplers.
+        It is the pipeline behind our lensing counterterm and two-loop cosmic shear analyses.
+      </div>
+      <div class="meta">Papers: <a href="https://arxiv.org/abs/2510.18981">2510.18981</a>, <a href="https://arxiv.org/abs/2603.28761">2603.28761</a></div>
+    </li>
+    <li>
+      <div class="title"><a href="https://github.com/AemulusProject/aemulus_heft">aemulus_heft</a></div>
+      <div>
+        An emulator for hybrid effective field theory and matter power spectra, trained on the Aemulus &nu; simulations.
+        It gives fast, accurate predictions for galaxy clustering and lensing, including massive neutrinos. Formerly known as <i>anzu</i>.
+      </div>
+      <div class="meta">Paper: <a href="https://arxiv.org/abs/2303.09762">2303.09762</a></div>
+    </li>
+    <li>
+      <div class="title"><a href="https://github.com/j-dr/pyaddgals">pyaddgals</a></div>
+      <div>
+        A Python implementation of ADDGALS, which adds realistic galaxies (positions, colors and magnitudes) to large dark-matter simulations to produce mock sky catalogs.
+        It was used to build the Buzzard catalogs.
+      </div>
+      <div class="meta">Papers: <a href="https://arxiv.org/abs/2105.12105">2105.12105</a>, <a href="https://arxiv.org/abs/1901.02401">1901.02401</a></div>
+    </li>
+  </ul>
+
+  <h2>Data</h2>
+  <ul class="entries">
+    <li>
+      <div class="title"><a href="https://datalab.noirlab.edu/buzzard.php">Buzzard mock catalogs</a></div>
+      <div>
+        Simulated galaxy surveys covering thousands of square degrees, with billions of galaxies, lensing and photometry.
+        They were built to test and validate Dark Energy Survey cosmology analyses, and are publicly available through NOIRLab's Astro Data Lab.
+      </div>
+      <div class="meta">Paper: <a href="https://arxiv.org/abs/1901.02401">1901.02401</a></div>
+    </li>
+    <li>
+      <div class="title"><a href="https://aemulusproject.github.io">Aemulus simulations</a></div>
+      <div>
+        Suites of N-body simulations that span many cosmological models, designed for training emulators of galaxy clustering and lensing.
+        Aemulus &nu; adds massive neutrinos and varies the dark energy equation of state.
+      </div>
+      <div class="meta">Papers: <a href="https://arxiv.org/abs/1804.05865">1804.05865</a>, <a href="https://arxiv.org/abs/2303.09762">2303.09762</a></div>
+    </li>
+  </ul>
+</main>
+
+<footer class="site">
+  jderose at bnl dot gov &middot; <a href="https://github.com/j-dr">github</a> &middot; <a href="https://scholar.google.com/citations?user=4SxA4A8AAAAJ">scholar</a> &middot; <a href="https://orcid.org/0000-0002-0728-0960">orcid</a> &middot; <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22DeRose%2C%20Joseph%22&amp;sort=date%20desc">ads</a>
+  <br>last updated october 2026
+</footer>
+
+</div>
+</body>
+</html>

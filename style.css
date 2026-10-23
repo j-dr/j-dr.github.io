@@ -1,0 +1,268 @@
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #5f5f5f;
+  --rule: #dddddd;
+  --hover-bg: #111111;
+  --hover-fg: #ffffff;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --fg: #e8e8e8;
+    --muted: #a0a0a0;
+    --rule: #333333;
+    --hover-bg: #e8e8e8;
+    --hover-fg: #121212;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+.wrap {
+  max-width: 70ch;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+
+header.site {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px 24px;
+  padding: 28px 0 20px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 36px;
+}
+
+header.site .name {
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Text */
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  background: var(--hover-bg);
+  color: var(--hover-fg);
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 1.6em;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 1.1em;
+  margin: 44px 0 14px;
+}
+
+h2::before {
+  content: "## ";
+  color: var(--muted);
+}
+
+h3 {
+  font-size: 1em;
+  margin: 24px 0 8px;
+}
+
+p, ul, ol, figure {
+  margin-bottom: 14px;
+}
+
+ul, ol {
+  padding-left: 2.5ch;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.lead {
+  font-weight: 700;
+}
+
+/* Home */
+
+.intro {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.intro img {
+  width: 140px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+
+.cta a {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.news {
+  list-style: none;
+  padding-left: 0;
+}
+
+.news time {
+  color: var(--muted);
+  margin-right: 1ch;
+}
+
+/* Research */
+
+section.project {
+  padding-top: 8px;
+}
+
+section.project + section.project {
+  border-top: 1px solid var(--rule);
+  margin-top: 36px;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  background: var(--bg);
+}
+
+figcaption {
+  font-size: 0.85em;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.papers {
+  font-size: 0.9em;
+  color: var(--muted);
+}
+
+.papers a {
+  color: var(--fg);
+}
+
+/* Publications / code */
+
+.entries {
+  list-style: none;
+  padding-left: 0;
+}
+
+.entries li {
+  margin-bottom: 22px;
+}
+
+.entries .title {
+  font-weight: 700;
+}
+
+.entries .meta {
+  font-size: 0.9em;
+  color: var(--muted);
+}
+
+/* Footer */
+
+footer.site {
+  margin-top: 64px;
+  padding: 20px 0 40px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85em;
+  color: var(--muted);
+}
+
+footer.site a {
+  color: var(--muted);
+}
+
+@media (max-width: 560px) {
+  body {
+    font-size: 14px;
+  }
+
+  .intro {
+    flex-direction: column;
+  }
+
+  .intro img {
+    width: 120px;
+  }
+}
+
+/* Inline diagrams: inherit page colors so they follow dark mode */
+
+svg.diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: var(--mono);
+  color: var(--fg);
+}
+
+svg.diagram .head { font-size: 15px; font-weight: 700; fill: currentColor; }
+svg.diagram .small { font-size: 12px; fill: var(--muted); }
+svg.diagram .frame { fill: none; stroke: var(--rule); }
+svg.diagram .axis { stroke: var(--muted); }
+svg.diagram .gal { fill: currentColor; }
+svg.diagram .gal.faint { fill: var(--muted); }
+svg.diagram .gal.ghost { fill: var(--rule); }
+svg.diagram .fiber { fill: none; stroke: currentColor; stroke-width: 1; }
+svg.diagram .curve { fill: none; stroke: currentColor; stroke-width: 1.6; }
+svg.diagram .curve.alt { stroke: var(--muted); stroke-dasharray: 3 3; stroke-width: 1; }

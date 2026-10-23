@@ -1,184 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Research projects in cosmology, dark energy, and large-scale structure.">
-    <title>Research - Joseph DeRose</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research · Joseph DeRose</title>
+  <meta name="description" content="Research on weak lensing, galaxy surveys, effective field theory and cosmological simulations.">
+  <meta property="og:title" content="Research · Joseph DeRose">
+  <meta property="og:description" content="Research on weak lensing, galaxy surveys, effective field theory and cosmological simulations.">
+  <meta property="og:image" content="images/desi-telescope.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80' font-family='monospace'>jd</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
 
-<style type="text/css">
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+<header class="site">
+  <a class="name" href="index.html">Joseph DeRose</a>
+  <nav>
+    <ul>
+      <li><a href="index.html">home</a></li>
+      <li><a href="research.html" aria-current="page">research</a></li>
+      <li><a href="publications.html">publications</a></li>
+      <li><a href="students.html">students</a></li>
+      <li><a href="code.html">code &amp; data</a></li>
+      <li><a href="images/cv.pdf">cv</a></li>
+    </ul>
+  </nav>
+</header>
 
-  body {
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 12pt;
-    color: #000;
-    line-height: 1.6;
-    background: #fff;
-  }
+<main>
+  <h1>Research</h1>
+  <p>
+    About 95% of the universe is made of dark matter and dark energy, which we can't see directly.
+    We learn about them from how matter clumps together over cosmic time, which galaxy surveys measure by mapping where galaxies are and how their light is bent by gravity.
+    My work spans that whole chain: <b>analyzing survey data</b>, building <b>theoretical models</b> accurate enough to interpret it, and running <b>simulations</b> to test and calibrate those models.
+  </p>
 
-  .title {
-    text-align: center;
-    width: 800px;
-    max-width: 90%;
-    margin: 0 auto;
-  }
+  <section class="project" id="desi-lensing">
+    <h2>DESI &times; weak lensing</h2>
+    <p class="lead">Measuring how cosmic structure has grown by combining 3D galaxy maps with the bending of light by gravity.</p>
+    <figure>
+      <img src="images/desi-telescope.jpg" alt="The Mayall Telescope, home of DESI, observing under the Milky Way" width="1200" height="800" loading="lazy">
+      <figcaption>DESI on the Mayall Telescope at Kitt Peak. Credit: KPNO/NOIRLab/NSF/AURA/T. Slovinský (<a href="https://noirlab.edu/public/images/MG-9353-CC/">CC BY 4.0</a>).</figcaption>
+    </figure>
+    <p>
+      <a href="https://www.desi.lbl.gov/">DESI</a> measures precise distances to tens of millions of galaxies.
+      <i>Weak gravitational lensing</i> is the slight distortion of light from distant objects, either background galaxies or the cosmic microwave background (CMB), as it passes through intervening matter.
+      Cross-correlating the two shows how much matter surrounds DESI galaxies at different points in cosmic history.
+      That growth history is a direct test of dark energy and general relativity.
+    </p>
+    <p>
+      Using perturbation theory and hybrid effective field theory models, we combined DESI galaxies with lensing from the Dark Energy Survey and found a clustering amplitude consistent with CMB predictions.
+      We also found strong evidence that galaxy <i>intrinsic alignments</i>, a contaminant in lensing, evolve differently from what is usually assumed.
+      Cross-correlating DESI luminous red galaxies with CMB lensing from Planck and ACT measures the amount of structure in the more distant universe.
+      With the same lensing maps, we also made a measurement of structure growth from <i>galaxy magnification</i>, the lensing-induced brightening of background galaxies.
+    </p>
+    <p class="papers">
+      Key papers:
+      <a href="https://arxiv.org/abs/2111.09898">DESI LRGs &times; Planck CMB lensing</a> (2021) &middot;
+      <a href="https://arxiv.org/abs/2407.04607">DESI LRGs &times; Planck and ACT CMB lensing</a> (2024) &middot;
+      <a href="https://arxiv.org/abs/2407.04795">Not all lensing is low</a> (2024) &middot;
+      <a href="https://arxiv.org/abs/2503.24385">DESI galaxies &times; CMB lensing and magnification</a> (2025)
+    </p>
+  </section>
 
-  .title img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-  }
+  <section class="project" id="steel">
+    <h2>Steel: Spectroscopically Calibrated Source Samples</h2>
+    <p class="lead">Fewer, better-measured galaxies can deliver the same cosmology from weak lensing, with far smaller systematic errors.</p>
+    <figure>
+      <svg viewBox="0 0 640 360" role="img" aria-labelledby="steel-title" class="diagram">
+      <title id="steel-title">Comparison of a dense photometric lensing sample with uncertain distances and the Steel sample: a sparse subset of the same galaxies whose distance distribution is calibrated from spectra of a representative fraction.</title>
+      <text x="10" y="22" class="head">typical lensing sample</text>
+      <text x="10" y="40" class="small">many faint galaxies</text>
+      <text x="340" y="22" class="head">Steel</text>
+      <text x="340" y="40" class="small">sparse subset; circled ones get spectra</text>
+      <rect x="10" y="52" width="290" height="150" class="frame"/>
+      <ellipse cx="83.7" cy="75.4" rx="2.4" ry="1.1" transform="rotate(12 83.7 75.4)" class="gal faint"/>
+      <ellipse cx="128.4" cy="181.3" rx="2.9" ry="1.6" transform="rotate(40 128.4 181.3)" class="gal faint"/>
+      <ellipse cx="164.9" cy="98.0" rx="2.0" ry="1.1" transform="rotate(39 164.9 98.0)" class="gal faint"/>
+      <ellipse cx="270.4" cy="169.8" rx="2.9" ry="1.6" transform="rotate(35 270.4 169.8)" class="gal faint"/>
+      <ellipse cx="103.7" cy="143.5" rx="2.8" ry="1.7" transform="rotate(158 103.7 143.5)" class="gal faint"/>
+      <ellipse cx="43.4" cy="140.8" rx="2.7" ry="1.4" transform="rotate(32 43.4 140.8)" class="gal faint"/>
+      <ellipse cx="147.9" cy="73.6" rx="3.1" ry="1.7" transform="rotate(99 147.9 73.6)" class="gal faint"/>
+      <ellipse cx="101.1" cy="180.2" rx="2.6" ry="1.7" transform="rotate(153 101.1 180.2)" class="gal faint"/>
+      <ellipse cx="157.3" cy="115.8" rx="2.6" ry="1.3" transform="rotate(29 157.3 115.8)" class="gal faint"/>
+      <ellipse cx="102.4" cy="167.6" rx="1.9" ry="1.0" transform="rotate(113 102.4 167.6)" class="gal faint"/>
+      <ellipse cx="95.7" cy="131.5" rx="2.5" ry="1.3" transform="rotate(180 95.7 131.5)" class="gal faint"/>
+      <ellipse cx="72.8" cy="115.7" rx="2.1" ry="1.5" transform="rotate(50 72.8 115.7)" class="gal faint"/>
+      <ellipse cx="116.1" cy="159.1" rx="2.2" ry="1.4" transform="rotate(163 116.1 159.1)" class="gal faint"/>
+      <ellipse cx="47.3" cy="70.0" rx="2.1" ry="1.6" transform="rotate(111 47.3 70.0)" class="gal faint"/>
+      <ellipse cx="84.1" cy="105.0" rx="2.0" ry="1.4" transform="rotate(8 84.1 105.0)" class="gal faint"/>
+      <ellipse cx="208.3" cy="178.5" rx="3.1" ry="1.6" transform="rotate(173 208.3 178.5)" class="gal faint"/>
+      <ellipse cx="24.9" cy="99.6" rx="3.2" ry="1.6" transform="rotate(74 24.9 99.6)" class="gal faint"/>
+      <ellipse cx="274.7" cy="142.7" rx="2.9" ry="1.2" transform="rotate(34 274.7 142.7)" class="gal faint"/>
+      <ellipse cx="139.9" cy="79.7" rx="2.3" ry="1.8" transform="rotate(60 139.9 79.7)" class="gal faint"/>
+      <ellipse cx="22.5" cy="67.8" rx="2.0" ry="1.6" transform="rotate(65 22.5 67.8)" class="gal faint"/>
+      <ellipse cx="98.4" cy="74.6" rx="3.2" ry="1.3" transform="rotate(37 98.4 74.6)" class="gal faint"/>
+      <ellipse cx="36.0" cy="69.2" rx="2.0" ry="1.5" transform="rotate(27 36.0 69.2)" class="gal faint"/>
+      <ellipse cx="31.0" cy="125.8" rx="2.1" ry="1.8" transform="rotate(22 31.0 125.8)" class="gal faint"/>
+      <ellipse cx="162.9" cy="162.6" rx="2.4" ry="1.8" transform="rotate(86 162.9 162.6)" class="gal faint"/>
+      <ellipse cx="85.3" cy="115.4" rx="1.9" ry="1.3" transform="rotate(45 85.3 115.4)" class="gal faint"/>
+      <ellipse cx="260.1" cy="170.0" rx="2.5" ry="1.0" transform="rotate(46 260.1 170.0)" class="gal faint"/>
+      <ellipse cx="85.4" cy="89.0" rx="2.1" ry="1.7" transform="rotate(26 85.4 89.0)" class="gal faint"/>
+      <ellipse cx="33.8" cy="182.6" rx="2.6" ry="1.8" transform="rotate(73 33.8 182.6)" class="gal faint"/>
+      <ellipse cx="263.3" cy="147.0" rx="2.9" ry="1.6" transform="rotate(89 263.3 147.0)" class="gal faint"/>
+      <ellipse cx="45.1" cy="89.4" rx="3.0" ry="1.7" transform="rotate(166 45.1 89.4)" class="gal faint"/>
+      <ellipse cx="110.9" cy="147.4" rx="2.9" ry="1.5" transform="rotate(147 110.9 147.4)" class="gal faint"/>
+      <ellipse cx="162.6" cy="147.1" rx="2.8" ry="1.2" transform="rotate(166 162.6 147.1)" class="gal faint"/>
+      <ellipse cx="278.2" cy="71.7" rx="3.2" ry="1.8" transform="rotate(120 278.2 71.7)" class="gal faint"/>
+      <ellipse cx="32.0" cy="178.9" rx="2.0" ry="1.8" transform="rotate(120 32.0 178.9)" class="gal faint"/>
+      <ellipse cx="36.3" cy="83.7" rx="2.7" ry="1.5" transform="rotate(134 36.3 83.7)" class="gal faint"/>
+      <ellipse cx="270.4" cy="90.4" rx="1.8" ry="1.7" transform="rotate(2 270.4 90.4)" class="gal faint"/>
+      <ellipse cx="256.6" cy="77.1" rx="2.9" ry="1.6" transform="rotate(158 256.6 77.1)" class="gal faint"/>
+      <ellipse cx="168.7" cy="176.2" rx="2.1" ry="1.5" transform="rotate(60 168.7 176.2)" class="gal faint"/>
+      <ellipse cx="260.8" cy="162.6" rx="2.5" ry="1.4" transform="rotate(5 260.8 162.6)" class="gal faint"/>
+      <ellipse cx="29.2" cy="139.3" rx="2.5" ry="1.7" transform="rotate(109 29.2 139.3)" class="gal faint"/>
+      <ellipse cx="57.5" cy="109.1" rx="2.9" ry="1.4" transform="rotate(2 57.5 109.1)" class="gal faint"/>
+      <ellipse cx="246.2" cy="169.6" rx="1.9" ry="1.4" transform="rotate(69 246.2 169.6)" class="gal faint"/>
+      <ellipse cx="232.6" cy="102.5" rx="2.1" ry="1.4" transform="rotate(174 232.6 102.5)" class="gal faint"/>
+      <ellipse cx="45.7" cy="76.9" rx="2.7" ry="1.7" transform="rotate(92 45.7 76.9)" class="gal faint"/>
+      <ellipse cx="137.2" cy="173.5" rx="2.9" ry="1.1" transform="rotate(159 137.2 173.5)" class="gal faint"/>
+      <ellipse cx="72.9" cy="101.3" rx="3.0" ry="1.3" transform="rotate(144 72.9 101.3)" class="gal faint"/>
+      <ellipse cx="65.2" cy="175.7" rx="2.0" ry="1.1" transform="rotate(89 65.2 175.7)" class="gal faint"/>
+      <ellipse cx="111.4" cy="132.4" rx="3.1" ry="1.6" transform="rotate(1 111.4 132.4)" class="gal faint"/>
+      <ellipse cx="104.2" cy="132.8" rx="2.5" ry="1.6" transform="rotate(87 104.2 132.8)" class="gal faint"/>
+      <ellipse cx="40.4" cy="93.9" rx="3.0" ry="1.3" transform="rotate(138 40.4 93.9)" class="gal faint"/>
+      <ellipse cx="286.2" cy="143.5" rx="2.7" ry="1.5" transform="rotate(56 286.2 143.5)" class="gal faint"/>
+      <ellipse cx="266.5" cy="122.7" rx="3.1" ry="1.2" transform="rotate(156 266.5 122.7)" class="gal faint"/>
+      <ellipse cx="232.4" cy="141.7" rx="2.4" ry="1.1" transform="rotate(139 232.4 141.7)" class="gal faint"/>
+      <ellipse cx="117.8" cy="148.1" rx="2.0" ry="1.1" transform="rotate(26 117.8 148.1)" class="gal faint"/>
+      <ellipse cx="238.4" cy="85.1" rx="3.1" ry="1.3" transform="rotate(104 238.4 85.1)" class="gal faint"/>
+      <ellipse cx="114.6" cy="142.7" rx="1.9" ry="1.3" transform="rotate(169 114.6 142.7)" class="gal faint"/>
+      <ellipse cx="68.5" cy="147.1" rx="2.3" ry="1.2" transform="rotate(4 68.5 147.1)" class="gal faint"/>
+      <ellipse cx="25.4" cy="185.4" rx="3.0" ry="1.6" transform="rotate(145 25.4 185.4)" class="gal faint"/>
+      <ellipse cx="277.4" cy="82.6" rx="2.6" ry="1.4" transform="rotate(103 277.4 82.6)" class="gal faint"/>
+      <ellipse cx="273.2" cy="160.8" rx="3.2" ry="1.1" transform="rotate(117 273.2 160.8)" class="gal faint"/>
+      <ellipse cx="202.4" cy="158.9" rx="2.7" ry="1.7" transform="rotate(55 202.4 158.9)" class="gal faint"/>
+      <ellipse cx="270.5" cy="114.8" rx="2.6" ry="1.7" transform="rotate(127 270.5 114.8)" class="gal faint"/>
+      <ellipse cx="103.6" cy="91.9" rx="2.3" ry="1.5" transform="rotate(179 103.6 91.9)" class="gal faint"/>
+      <ellipse cx="262.7" cy="114.0" rx="2.4" ry="1.7" transform="rotate(51 262.7 114.0)" class="gal faint"/>
+      <ellipse cx="131.1" cy="63.7" rx="2.1" ry="1.4" transform="rotate(125 131.1 63.7)" class="gal faint"/>
+      <ellipse cx="186.0" cy="109.4" rx="3.1" ry="1.5" transform="rotate(28 186.0 109.4)" class="gal faint"/>
+      <ellipse cx="38.3" cy="188.6" rx="3.2" ry="1.7" transform="rotate(109 38.3 188.6)" class="gal faint"/>
+      <ellipse cx="104.3" cy="73.9" rx="2.2" ry="1.2" transform="rotate(167 104.3 73.9)" class="gal faint"/>
+      <ellipse cx="60.2" cy="93.0" rx="2.2" ry="1.8" transform="rotate(29 60.2 93.0)" class="gal faint"/>
+      <ellipse cx="233.4" cy="150.5" rx="2.6" ry="1.8" transform="rotate(47 233.4 150.5)" class="gal faint"/>
+      <ellipse cx="161.6" cy="82.5" rx="1.9" ry="1.0" transform="rotate(57 161.6 82.5)" class="gal faint"/>
+      <ellipse cx="52.9" cy="70.0" rx="3.2" ry="1.2" transform="rotate(160 52.9 70.0)" class="gal faint"/>
+      <ellipse cx="209.5" cy="157.1" rx="2.7" ry="1.8" transform="rotate(158 209.5 157.1)" class="gal faint"/>
+      <ellipse cx="214.2" cy="134.8" rx="2.8" ry="1.6" transform="rotate(99 214.2 134.8)" class="gal faint"/>
+      <ellipse cx="155.7" cy="82.0" rx="3.0" ry="1.4" transform="rotate(12 155.7 82.0)" class="gal faint"/>
+      <ellipse cx="89.1" cy="112.9" rx="2.8" ry="1.7" transform="rotate(59 89.1 112.9)" class="gal faint"/>
+      <ellipse cx="124.4" cy="117.0" rx="1.8" ry="1.7" transform="rotate(3 124.4 117.0)" class="gal faint"/>
+      <ellipse cx="62.3" cy="172.3" rx="3.0" ry="1.2" transform="rotate(100 62.3 172.3)" class="gal faint"/>
+      <ellipse cx="148.7" cy="155.4" rx="2.1" ry="1.7" transform="rotate(179 148.7 155.4)" class="gal faint"/>
+      <ellipse cx="210.7" cy="181.8" rx="3.1" ry="1.3" transform="rotate(153 210.7 181.8)" class="gal faint"/>
+      <ellipse cx="245.1" cy="138.3" rx="2.0" ry="1.5" transform="rotate(164 245.1 138.3)" class="gal faint"/>
+      <ellipse cx="262.2" cy="140.0" rx="1.9" ry="1.5" transform="rotate(46 262.2 140.0)" class="gal faint"/>
+      <ellipse cx="251.7" cy="148.1" rx="2.2" ry="1.7" transform="rotate(113 251.7 148.1)" class="gal faint"/>
+      <ellipse cx="111.6" cy="170.4" rx="3.0" ry="1.7" transform="rotate(159 111.6 170.4)" class="gal faint"/>
+      <ellipse cx="197.8" cy="152.8" rx="2.6" ry="1.4" transform="rotate(178 197.8 152.8)" class="gal faint"/>
+      <ellipse cx="115.3" cy="72.6" rx="2.8" ry="1.4" transform="rotate(98 115.3 72.6)" class="gal faint"/>
+      <ellipse cx="181.4" cy="94.5" rx="2.1" ry="1.1" transform="rotate(141 181.4 94.5)" class="gal faint"/>
+      <ellipse cx="265.3" cy="152.6" rx="2.0" ry="1.8" transform="rotate(149 265.3 152.6)" class="gal faint"/>
+      <ellipse cx="157.5" cy="62.1" rx="3.0" ry="1.5" transform="rotate(112 157.5 62.1)" class="gal faint"/>
+      <ellipse cx="24.9" cy="157.3" rx="1.8" ry="1.4" transform="rotate(26 24.9 157.3)" class="gal faint"/>
+      <ellipse cx="117.2" cy="177.7" rx="2.8" ry="1.7" transform="rotate(54 117.2 177.7)" class="gal faint"/>
+      <ellipse cx="124.9" cy="140.6" rx="1.8" ry="1.3" transform="rotate(175 124.9 140.6)" class="gal faint"/>
+      <ellipse cx="223.6" cy="174.2" rx="2.2" ry="1.6" transform="rotate(142 223.6 174.2)" class="gal faint"/>
+      <ellipse cx="210.2" cy="118.9" rx="2.0" ry="1.0" transform="rotate(160 210.2 118.9)" class="gal faint"/>
+      <ellipse cx="271.6" cy="97.9" rx="2.9" ry="1.3" transform="rotate(113 271.6 97.9)" class="gal faint"/>
+      <ellipse cx="247.3" cy="103.8" rx="2.7" ry="1.2" transform="rotate(92 247.3 103.8)" class="gal faint"/>
+      <ellipse cx="28.1" cy="96.3" rx="2.2" ry="1.7" transform="rotate(24 28.1 96.3)" class="gal faint"/>
+      <ellipse cx="224.7" cy="73.3" rx="3.2" ry="1.1" transform="rotate(17 224.7 73.3)" class="gal faint"/>
+      <ellipse cx="77.1" cy="183.3" rx="2.7" ry="1.7" transform="rotate(90 77.1 183.3)" class="gal faint"/>
+      <ellipse cx="50.8" cy="106.3" rx="2.4" ry="1.8" transform="rotate(30 50.8 106.3)" class="gal faint"/>
+      <ellipse cx="85.9" cy="171.6" rx="2.0" ry="1.8" transform="rotate(53 85.9 171.6)" class="gal faint"/>
+      <ellipse cx="173.2" cy="147.9" rx="3.1" ry="1.1" transform="rotate(152 173.2 147.9)" class="gal faint"/>
+      <ellipse cx="68.4" cy="155.4" rx="1.8" ry="1.6" transform="rotate(33 68.4 155.4)" class="gal faint"/>
+      <ellipse cx="75.7" cy="66.5" rx="2.3" ry="1.3" transform="rotate(177 75.7 66.5)" class="gal faint"/>
+      <ellipse cx="287.3" cy="84.3" rx="2.1" ry="1.8" transform="rotate(171 287.3 84.3)" class="gal faint"/>
+      <ellipse cx="204.7" cy="189.2" rx="1.9" ry="1.7" transform="rotate(127 204.7 189.2)" class="gal faint"/>
+      <ellipse cx="200.4" cy="171.6" rx="1.9" ry="1.2" transform="rotate(25 200.4 171.6)" class="gal faint"/>
+      <ellipse cx="149.3" cy="133.0" rx="2.6" ry="1.3" transform="rotate(134 149.3 133.0)" class="gal faint"/>
+      <ellipse cx="246.4" cy="160.6" rx="1.9" ry="1.1" transform="rotate(39 246.4 160.6)" class="gal faint"/>
+      <ellipse cx="84.3" cy="136.6" rx="2.1" ry="1.5" transform="rotate(62 84.3 136.6)" class="gal faint"/>
+      <ellipse cx="118.2" cy="154.1" rx="3.1" ry="1.2" transform="rotate(63 118.2 154.1)" class="gal faint"/>
+      <ellipse cx="285.0" cy="89.6" rx="1.8" ry="1.2" transform="rotate(149 285.0 89.6)" class="gal faint"/>
+      <ellipse cx="217.4" cy="184.0" rx="2.5" ry="1.0" transform="rotate(55 217.4 184.0)" class="gal faint"/>
+      <ellipse cx="214.2" cy="113.1" rx="2.0" ry="1.3" transform="rotate(83 214.2 113.1)" class="gal faint"/>
+      <ellipse cx="116.1" cy="120.0" rx="2.0" ry="1.0" transform="rotate(141 116.1 120.0)" class="gal faint"/>
+      <ellipse cx="217.7" cy="116.4" rx="2.0" ry="1.2" transform="rotate(100 217.7 116.4)" class="gal faint"/>
+      <ellipse cx="261.6" cy="124.6" rx="3.2" ry="1.4" transform="rotate(33 261.6 124.6)" class="gal faint"/>
+      <ellipse cx="186.1" cy="140.0" rx="2.6" ry="1.6" transform="rotate(4 186.1 140.0)" class="gal faint"/>
+      <ellipse cx="138.0" cy="166.0" rx="2.0" ry="1.0" transform="rotate(33 138.0 166.0)" class="gal faint"/>
+      <ellipse cx="97.1" cy="118.6" rx="2.2" ry="1.5" transform="rotate(31 97.1 118.6)" class="gal faint"/>
+      <ellipse cx="167.0" cy="186.6" rx="3.1" ry="1.2" transform="rotate(60 167.0 186.6)" class="gal faint"/>
+      <ellipse cx="165.2" cy="132.7" rx="2.3" ry="1.7" transform="rotate(35 165.2 132.7)" class="gal faint"/>
+      <ellipse cx="212.0" cy="139.6" rx="1.9" ry="1.7" transform="rotate(157 212.0 139.6)" class="gal faint"/>
+      <ellipse cx="41.7" cy="184.4" rx="2.9" ry="1.5" transform="rotate(98 41.7 184.4)" class="gal faint"/>
+      <ellipse cx="91.1" cy="69.4" rx="2.5" ry="1.7" transform="rotate(38 91.1 69.4)" class="gal faint"/>
+      <ellipse cx="147.6" cy="98.7" rx="2.8" ry="1.8" transform="rotate(160 147.6 98.7)" class="gal faint"/>
+      <ellipse cx="20.7" cy="130.8" rx="3.0" ry="1.7" transform="rotate(13 20.7 130.8)" class="gal faint"/>
+      <ellipse cx="137.0" cy="72.4" rx="2.4" ry="1.7" transform="rotate(51 137.0 72.4)" class="gal faint"/>
+      <ellipse cx="248.3" cy="186.2" rx="2.9" ry="1.2" transform="rotate(165 248.3 186.2)" class="gal faint"/>
+      <ellipse cx="269.2" cy="191.8" rx="1.8" ry="1.0" transform="rotate(52 269.2 191.8)" class="gal faint"/>
+      <ellipse cx="45.0" cy="145.3" rx="2.7" ry="1.5" transform="rotate(92 45.0 145.3)" class="gal faint"/>
+      <ellipse cx="168.3" cy="151.7" rx="1.9" ry="1.3" transform="rotate(24 168.3 151.7)" class="gal faint"/>
+      <ellipse cx="48.1" cy="161.1" rx="2.3" ry="1.3" transform="rotate(50 48.1 161.1)" class="gal faint"/>
+      <ellipse cx="178.6" cy="77.4" rx="2.7" ry="1.1" transform="rotate(172 178.6 77.4)" class="gal faint"/>
+      <ellipse cx="62.4" cy="161.8" rx="2.6" ry="1.3" transform="rotate(55 62.4 161.8)" class="gal faint"/>
+      <ellipse cx="86.8" cy="143.2" rx="2.0" ry="1.4" transform="rotate(117 86.8 143.2)" class="gal faint"/>
+      <ellipse cx="166.9" cy="137.5" rx="2.6" ry="1.2" transform="rotate(172 166.9 137.5)" class="gal faint"/>
+      <ellipse cx="277.9" cy="120.7" rx="2.3" ry="1.2" transform="rotate(57 277.9 120.7)" class="gal faint"/>
+      <ellipse cx="101.0" cy="103.1" rx="2.1" ry="1.4" transform="rotate(53 101.0 103.1)" class="gal faint"/>
+      <ellipse cx="105.1" cy="174.2" rx="2.9" ry="1.3" transform="rotate(150 105.1 174.2)" class="gal faint"/>
+      <ellipse cx="67.7" cy="74.5" rx="3.2" ry="1.0" transform="rotate(1 67.7 74.5)" class="gal faint"/>
+      <ellipse cx="254.1" cy="62.3" rx="2.7" ry="1.4" transform="rotate(40 254.1 62.3)" class="gal faint"/>
+      <ellipse cx="86.3" cy="187.7" rx="2.4" ry="1.2" transform="rotate(79 86.3 187.7)" class="gal faint"/>
+      <ellipse cx="217.7" cy="99.8" rx="1.9" ry="1.6" transform="rotate(17 217.7 99.8)" class="gal faint"/>
+      <rect x="340" y="52" width="290" height="150" class="frame"/>
+      <ellipse cx="413.7" cy="75.4" rx="2.8" ry="1.3" transform="rotate(12 413.7 75.4)" class="gal"/>
+      <ellipse cx="458.4" cy="181.3" rx="3.5" ry="1.9" transform="rotate(40 458.4 181.3)" class="gal"/>
+      <ellipse cx="494.9" cy="98.0" rx="2.0" ry="1.1" transform="rotate(39 494.9 98.0)" class="gal ghost"/>
+      <ellipse cx="600.4" cy="169.8" rx="2.9" ry="1.6" transform="rotate(35 600.4 169.8)" class="gal ghost"/>
+      <ellipse cx="433.7" cy="143.5" rx="2.8" ry="1.7" transform="rotate(158 433.7 143.5)" class="gal ghost"/>
+      <ellipse cx="373.4" cy="140.8" rx="2.7" ry="1.4" transform="rotate(32 373.4 140.8)" class="gal ghost"/>
+      <ellipse cx="477.9" cy="73.6" rx="3.1" ry="1.7" transform="rotate(99 477.9 73.6)" class="gal ghost"/>
+      <ellipse cx="431.1" cy="180.2" rx="2.6" ry="1.7" transform="rotate(153 431.1 180.2)" class="gal ghost"/>
+      <ellipse cx="487.3" cy="115.8" rx="2.6" ry="1.3" transform="rotate(29 487.3 115.8)" class="gal ghost"/>
+      <ellipse cx="432.4" cy="167.6" rx="1.9" ry="1.0" transform="rotate(113 432.4 167.6)" class="gal ghost"/>
+      <ellipse cx="425.7" cy="131.5" rx="2.5" ry="1.3" transform="rotate(180 425.7 131.5)" class="gal ghost"/>
+      <ellipse cx="402.8" cy="115.7" rx="2.1" ry="1.5" transform="rotate(50 402.8 115.7)" class="gal ghost"/>
+      <ellipse cx="446.1" cy="159.1" rx="2.7" ry="1.7" transform="rotate(163 446.1 159.1)" class="gal"/>
+      <ellipse cx="377.3" cy="70.0" rx="2.1" ry="1.6" transform="rotate(111 377.3 70.0)" class="gal ghost"/>
+      <ellipse cx="414.1" cy="105.0" rx="2.5" ry="1.6" transform="rotate(8 414.1 105.0)" class="gal"/>
+      <ellipse cx="538.3" cy="178.5" rx="3.1" ry="1.6" transform="rotate(173 538.3 178.5)" class="gal ghost"/>
+      <ellipse cx="354.9" cy="99.6" rx="3.2" ry="1.6" transform="rotate(74 354.9 99.6)" class="gal ghost"/>
+      <ellipse cx="604.7" cy="142.7" rx="2.9" ry="1.2" transform="rotate(34 604.7 142.7)" class="gal ghost"/>
+      <ellipse cx="469.9" cy="79.7" rx="2.3" ry="1.8" transform="rotate(60 469.9 79.7)" class="gal ghost"/>
+      <ellipse cx="352.5" cy="67.8" rx="2.0" ry="1.6" transform="rotate(65 352.5 67.8)" class="gal ghost"/>
+      <ellipse cx="428.4" cy="74.6" rx="3.2" ry="1.3" transform="rotate(37 428.4 74.6)" class="gal ghost"/>
+      <ellipse cx="366.0" cy="69.2" rx="2.0" ry="1.5" transform="rotate(27 366.0 69.2)" class="gal ghost"/>
+      <ellipse cx="361.0" cy="125.8" rx="2.1" ry="1.8" transform="rotate(22 361.0 125.8)" class="gal ghost"/>
+      <ellipse cx="492.9" cy="162.6" rx="2.4" ry="1.8" transform="rotate(86 492.9 162.6)" class="gal ghost"/>
+      <ellipse cx="415.3" cy="115.4" rx="1.9" ry="1.3" transform="rotate(45 415.3 115.4)" class="gal ghost"/>
+      <ellipse cx="590.1" cy="170.0" rx="2.5" ry="1.0" transform="rotate(46 590.1 170.0)" class="gal ghost"/>
+      <ellipse cx="415.4" cy="89.0" rx="2.1" ry="1.7" transform="rotate(26 415.4 89.0)" class="gal ghost"/>
+      <ellipse cx="363.8" cy="182.6" rx="2.6" ry="1.8" transform="rotate(73 363.8 182.6)" class="gal ghost"/>
+      <ellipse cx="593.3" cy="147.0" rx="2.9" ry="1.6" transform="rotate(89 593.3 147.0)" class="gal ghost"/>
+      <ellipse cx="375.1" cy="89.4" rx="3.0" ry="1.7" transform="rotate(166 375.1 89.4)" class="gal ghost"/>
+      <ellipse cx="440.9" cy="147.4" rx="2.9" ry="1.5" transform="rotate(147 440.9 147.4)" class="gal ghost"/>
+      <ellipse cx="492.6" cy="147.1" rx="2.8" ry="1.2" transform="rotate(166 492.6 147.1)" class="gal ghost"/>
+      <ellipse cx="608.2" cy="71.7" rx="3.2" ry="1.8" transform="rotate(120 608.2 71.7)" class="gal ghost"/>
+      <ellipse cx="362.0" cy="178.9" rx="2.4" ry="2.1" transform="rotate(120 362.0 178.9)" class="gal"/>
+      <ellipse cx="366.3" cy="83.7" rx="2.7" ry="1.5" transform="rotate(134 366.3 83.7)" class="gal ghost"/>
+      <ellipse cx="600.4" cy="90.4" rx="1.8" ry="1.7" transform="rotate(2 600.4 90.4)" class="gal ghost"/>
+      <ellipse cx="586.6" cy="77.1" rx="3.5" ry="2.0" transform="rotate(158 586.6 77.1)" class="gal"/>
+      <ellipse cx="498.7" cy="176.2" rx="2.1" ry="1.5" transform="rotate(60 498.7 176.2)" class="gal ghost"/>
+      <ellipse cx="590.8" cy="162.6" rx="2.5" ry="1.4" transform="rotate(5 590.8 162.6)" class="gal ghost"/>
+      <ellipse cx="359.2" cy="139.3" rx="2.5" ry="1.7" transform="rotate(109 359.2 139.3)" class="gal ghost"/>
+      <ellipse cx="387.5" cy="109.1" rx="2.9" ry="1.4" transform="rotate(2 387.5 109.1)" class="gal ghost"/>
+      <ellipse cx="576.2" cy="169.6" rx="2.3" ry="1.7" transform="rotate(69 576.2 169.6)" class="gal"/>
+      <ellipse cx="562.6" cy="102.5" rx="2.1" ry="1.4" transform="rotate(174 562.6 102.5)" class="gal ghost"/>
+      <ellipse cx="375.7" cy="76.9" rx="2.7" ry="1.7" transform="rotate(92 375.7 76.9)" class="gal ghost"/>
+      <ellipse cx="467.2" cy="173.5" rx="2.9" ry="1.1" transform="rotate(159 467.2 173.5)" class="gal ghost"/>
+      <ellipse cx="402.9" cy="101.3" rx="3.0" ry="1.3" transform="rotate(144 402.9 101.3)" class="gal ghost"/>
+      <ellipse cx="395.2" cy="175.7" rx="2.0" ry="1.1" transform="rotate(89 395.2 175.7)" class="gal ghost"/>
+      <ellipse cx="441.4" cy="132.4" rx="3.1" ry="1.6" transform="rotate(1 441.4 132.4)" class="gal ghost"/>
+      <ellipse cx="434.2" cy="132.8" rx="3.0" ry="1.9" transform="rotate(87 434.2 132.8)" class="gal"/>
+      <circle cx="434.2" cy="132.8" r="7" class="fiber"/>
+      <ellipse cx="370.4" cy="93.9" rx="3.6" ry="1.5" transform="rotate(138 370.4 93.9)" class="gal"/>
+      <circle cx="370.4" cy="93.9" r="7" class="fiber"/>
+      <ellipse cx="616.2" cy="143.5" rx="3.3" ry="1.8" transform="rotate(56 616.2 143.5)" class="gal"/>
+      <ellipse cx="596.5" cy="122.7" rx="3.1" ry="1.2" transform="rotate(156 596.5 122.7)" class="gal ghost"/>
+      <ellipse cx="562.4" cy="141.7" rx="2.4" ry="1.1" transform="rotate(139 562.4 141.7)" class="gal ghost"/>
+      <ellipse cx="447.8" cy="148.1" rx="2.0" ry="1.1" transform="rotate(26 447.8 148.1)" class="gal ghost"/>
+      <ellipse cx="568.4" cy="85.1" rx="3.1" ry="1.3" transform="rotate(104 568.4 85.1)" class="gal ghost"/>
+      <ellipse cx="444.6" cy="142.7" rx="1.9" ry="1.3" transform="rotate(169 444.6 142.7)" class="gal ghost"/>
+      <ellipse cx="398.5" cy="147.1" rx="2.7" ry="1.5" transform="rotate(4 398.5 147.1)" class="gal"/>
+      <ellipse cx="355.4" cy="185.4" rx="3.0" ry="1.6" transform="rotate(145 355.4 185.4)" class="gal ghost"/>
+      <ellipse cx="607.4" cy="82.6" rx="2.6" ry="1.4" transform="rotate(103 607.4 82.6)" class="gal ghost"/>
+      <ellipse cx="603.2" cy="160.8" rx="3.2" ry="1.1" transform="rotate(117 603.2 160.8)" class="gal ghost"/>
+      <ellipse cx="532.4" cy="158.9" rx="2.7" ry="1.7" transform="rotate(55 532.4 158.9)" class="gal ghost"/>
+      <ellipse cx="600.5" cy="114.8" rx="2.6" ry="1.7" transform="rotate(127 600.5 114.8)" class="gal ghost"/>
+      <ellipse cx="433.6" cy="91.9" rx="2.7" ry="1.8" transform="rotate(179 433.6 91.9)" class="gal"/>
+      <ellipse cx="592.7" cy="114.0" rx="2.4" ry="1.7" transform="rotate(51 592.7 114.0)" class="gal ghost"/>
+      <ellipse cx="461.1" cy="63.7" rx="2.1" ry="1.4" transform="rotate(125 461.1 63.7)" class="gal ghost"/>
+      <ellipse cx="516.0" cy="109.4" rx="3.1" ry="1.5" transform="rotate(28 516.0 109.4)" class="gal ghost"/>
+      <ellipse cx="368.3" cy="188.6" rx="3.2" ry="1.7" transform="rotate(109 368.3 188.6)" class="gal ghost"/>
+      <ellipse cx="434.3" cy="73.9" rx="2.2" ry="1.2" transform="rotate(167 434.3 73.9)" class="gal ghost"/>
+      <ellipse cx="390.2" cy="93.0" rx="2.2" ry="1.8" transform="rotate(29 390.2 93.0)" class="gal ghost"/>
+      <ellipse cx="563.4" cy="150.5" rx="2.6" ry="1.8" transform="rotate(47 563.4 150.5)" class="gal ghost"/>
+      <ellipse cx="491.6" cy="82.5" rx="2.3" ry="1.2" transform="rotate(57 491.6 82.5)" class="gal"/>
+      <ellipse cx="382.9" cy="70.0" rx="3.2" ry="1.2" transform="rotate(160 382.9 70.0)" class="gal ghost"/>
+      <ellipse cx="539.5" cy="157.1" rx="2.7" ry="1.8" transform="rotate(158 539.5 157.1)" class="gal ghost"/>
+      <ellipse cx="544.2" cy="134.8" rx="2.8" ry="1.6" transform="rotate(99 544.2 134.8)" class="gal ghost"/>
+      <ellipse cx="485.7" cy="82.0" rx="3.0" ry="1.4" transform="rotate(12 485.7 82.0)" class="gal ghost"/>
+      <ellipse cx="419.1" cy="112.9" rx="2.8" ry="1.7" transform="rotate(59 419.1 112.9)" class="gal ghost"/>
+      <ellipse cx="454.4" cy="117.0" rx="1.8" ry="1.7" transform="rotate(3 454.4 117.0)" class="gal ghost"/>
+      <ellipse cx="392.3" cy="172.3" rx="3.0" ry="1.2" transform="rotate(100 392.3 172.3)" class="gal ghost"/>
+      <ellipse cx="478.7" cy="155.4" rx="2.1" ry="1.7" transform="rotate(179 478.7 155.4)" class="gal ghost"/>
+      <ellipse cx="540.7" cy="181.8" rx="3.1" ry="1.3" transform="rotate(153 540.7 181.8)" class="gal ghost"/>
+      <ellipse cx="575.1" cy="138.3" rx="2.0" ry="1.5" transform="rotate(164 575.1 138.3)" class="gal ghost"/>
+      <ellipse cx="592.2" cy="140.0" rx="1.9" ry="1.5" transform="rotate(46 592.2 140.0)" class="gal ghost"/>
+      <ellipse cx="581.7" cy="148.1" rx="2.2" ry="1.7" transform="rotate(113 581.7 148.1)" class="gal ghost"/>
+      <ellipse cx="441.6" cy="170.4" rx="3.0" ry="1.7" transform="rotate(159 441.6 170.4)" class="gal ghost"/>
+      <ellipse cx="527.8" cy="152.8" rx="2.6" ry="1.4" transform="rotate(178 527.8 152.8)" class="gal ghost"/>
+      <ellipse cx="445.3" cy="72.6" rx="2.8" ry="1.4" transform="rotate(98 445.3 72.6)" class="gal ghost"/>
+      <ellipse cx="511.4" cy="94.5" rx="2.1" ry="1.1" transform="rotate(141 511.4 94.5)" class="gal ghost"/>
+      <ellipse cx="595.3" cy="152.6" rx="2.4" ry="2.1" transform="rotate(149 595.3 152.6)" class="gal"/>
+      <circle cx="595.3" cy="152.6" r="7" class="fiber"/>
+      <ellipse cx="487.5" cy="62.1" rx="3.6" ry="1.8" transform="rotate(112 487.5 62.1)" class="gal"/>
+      <ellipse cx="354.9" cy="157.3" rx="2.2" ry="1.7" transform="rotate(26 354.9 157.3)" class="gal"/>
+      <ellipse cx="447.2" cy="177.7" rx="2.8" ry="1.7" transform="rotate(54 447.2 177.7)" class="gal ghost"/>
+      <ellipse cx="454.9" cy="140.6" rx="1.8" ry="1.3" transform="rotate(175 454.9 140.6)" class="gal ghost"/>
+      <ellipse cx="553.6" cy="174.2" rx="2.2" ry="1.6" transform="rotate(142 553.6 174.2)" class="gal ghost"/>
+      <ellipse cx="540.2" cy="118.9" rx="2.5" ry="1.2" transform="rotate(160 540.2 118.9)" class="gal"/>
+      <ellipse cx="601.6" cy="97.9" rx="2.9" ry="1.3" transform="rotate(113 601.6 97.9)" class="gal ghost"/>
+      <ellipse cx="577.3" cy="103.8" rx="3.2" ry="1.4" transform="rotate(92 577.3 103.8)" class="gal"/>
+      <ellipse cx="358.1" cy="96.3" rx="2.2" ry="1.7" transform="rotate(24 358.1 96.3)" class="gal ghost"/>
+      <ellipse cx="554.7" cy="73.3" rx="3.8" ry="1.4" transform="rotate(17 554.7 73.3)" class="gal"/>
+      <circle cx="554.7" cy="73.3" r="7" class="fiber"/>
+      <ellipse cx="407.1" cy="183.3" rx="2.7" ry="1.7" transform="rotate(90 407.1 183.3)" class="gal ghost"/>
+      <ellipse cx="380.8" cy="106.3" rx="2.4" ry="1.8" transform="rotate(30 380.8 106.3)" class="gal ghost"/>
+      <ellipse cx="415.9" cy="171.6" rx="2.4" ry="2.1" transform="rotate(53 415.9 171.6)" class="gal"/>
+      <circle cx="415.9" cy="171.6" r="7" class="fiber"/>
+      <ellipse cx="503.2" cy="147.9" rx="3.1" ry="1.1" transform="rotate(152 503.2 147.9)" class="gal ghost"/>
+      <ellipse cx="398.4" cy="155.4" rx="1.8" ry="1.6" transform="rotate(33 398.4 155.4)" class="gal ghost"/>
+      <ellipse cx="405.7" cy="66.5" rx="2.3" ry="1.3" transform="rotate(177 405.7 66.5)" class="gal ghost"/>
+      <ellipse cx="617.3" cy="84.3" rx="2.5" ry="2.1" transform="rotate(171 617.3 84.3)" class="gal"/>
+      <ellipse cx="534.7" cy="189.2" rx="1.9" ry="1.7" transform="rotate(127 534.7 189.2)" class="gal ghost"/>
+      <ellipse cx="530.4" cy="171.6" rx="1.9" ry="1.2" transform="rotate(25 530.4 171.6)" class="gal ghost"/>
+      <ellipse cx="479.3" cy="133.0" rx="2.6" ry="1.3" transform="rotate(134 479.3 133.0)" class="gal ghost"/>
+      <ellipse cx="576.4" cy="160.6" rx="1.9" ry="1.1" transform="rotate(39 576.4 160.6)" class="gal ghost"/>
+      <ellipse cx="414.3" cy="136.6" rx="2.1" ry="1.5" transform="rotate(62 414.3 136.6)" class="gal ghost"/>
+      <ellipse cx="448.2" cy="154.1" rx="3.1" ry="1.2" transform="rotate(63 448.2 154.1)" class="gal ghost"/>
+      <ellipse cx="615.0" cy="89.6" rx="1.8" ry="1.2" transform="rotate(149 615.0 89.6)" class="gal ghost"/>
+      <ellipse cx="547.4" cy="184.0" rx="3.0" ry="1.2" transform="rotate(55 547.4 184.0)" class="gal"/>
+      <circle cx="547.4" cy="184.0" r="7" class="fiber"/>
+      <ellipse cx="544.2" cy="113.1" rx="2.0" ry="1.3" transform="rotate(83 544.2 113.1)" class="gal ghost"/>
+      <ellipse cx="446.1" cy="120.0" rx="2.0" ry="1.0" transform="rotate(141 446.1 120.0)" class="gal ghost"/>
+      <ellipse cx="547.7" cy="116.4" rx="2.0" ry="1.2" transform="rotate(100 547.7 116.4)" class="gal ghost"/>
+      <ellipse cx="591.6" cy="124.6" rx="3.2" ry="1.4" transform="rotate(33 591.6 124.6)" class="gal ghost"/>
+      <ellipse cx="516.1" cy="140.0" rx="2.6" ry="1.6" transform="rotate(4 516.1 140.0)" class="gal ghost"/>
+      <ellipse cx="468.0" cy="166.0" rx="2.0" ry="1.0" transform="rotate(33 468.0 166.0)" class="gal ghost"/>
+      <ellipse cx="427.1" cy="118.6" rx="2.2" ry="1.5" transform="rotate(31 427.1 118.6)" class="gal ghost"/>
+      <ellipse cx="497.0" cy="186.6" rx="3.1" ry="1.2" transform="rotate(60 497.0 186.6)" class="gal ghost"/>
+      <ellipse cx="495.2" cy="132.7" rx="2.3" ry="1.7" transform="rotate(35 495.2 132.7)" class="gal ghost"/>
+      <ellipse cx="542.0" cy="139.6" rx="1.9" ry="1.7" transform="rotate(157 542.0 139.6)" class="gal ghost"/>
+      <ellipse cx="371.7" cy="184.4" rx="2.9" ry="1.5" transform="rotate(98 371.7 184.4)" class="gal ghost"/>
+      <ellipse cx="421.1" cy="69.4" rx="2.5" ry="1.7" transform="rotate(38 421.1 69.4)" class="gal ghost"/>
+      <ellipse cx="477.6" cy="98.7" rx="2.8" ry="1.8" transform="rotate(160 477.6 98.7)" class="gal ghost"/>
+      <ellipse cx="350.7" cy="130.8" rx="3.0" ry="1.7" transform="rotate(13 350.7 130.8)" class="gal ghost"/>
+      <ellipse cx="467.0" cy="72.4" rx="2.4" ry="1.7" transform="rotate(51 467.0 72.4)" class="gal ghost"/>
+      <ellipse cx="578.3" cy="186.2" rx="2.9" ry="1.2" transform="rotate(165 578.3 186.2)" class="gal ghost"/>
+      <ellipse cx="599.2" cy="191.8" rx="1.8" ry="1.0" transform="rotate(52 599.2 191.8)" class="gal ghost"/>
+      <ellipse cx="375.0" cy="145.3" rx="3.3" ry="1.8" transform="rotate(92 375.0 145.3)" class="gal"/>
+      <ellipse cx="498.3" cy="151.7" rx="1.9" ry="1.3" transform="rotate(24 498.3 151.7)" class="gal ghost"/>
+      <ellipse cx="378.1" cy="161.1" rx="2.3" ry="1.3" transform="rotate(50 378.1 161.1)" class="gal ghost"/>
+      <ellipse cx="508.6" cy="77.4" rx="2.7" ry="1.1" transform="rotate(172 508.6 77.4)" class="gal ghost"/>
+      <ellipse cx="392.4" cy="161.8" rx="2.6" ry="1.3" transform="rotate(55 392.4 161.8)" class="gal ghost"/>
+      <ellipse cx="416.8" cy="143.2" rx="2.0" ry="1.4" transform="rotate(117 416.8 143.2)" class="gal ghost"/>
+      <ellipse cx="496.9" cy="137.5" rx="2.6" ry="1.2" transform="rotate(172 496.9 137.5)" class="gal ghost"/>
+      <ellipse cx="607.9" cy="120.7" rx="2.7" ry="1.5" transform="rotate(57 607.9 120.7)" class="gal"/>
+      <ellipse cx="431.0" cy="103.1" rx="2.1" ry="1.4" transform="rotate(53 431.0 103.1)" class="gal ghost"/>
+      <ellipse cx="435.1" cy="174.2" rx="2.9" ry="1.3" transform="rotate(150 435.1 174.2)" class="gal ghost"/>
+      <ellipse cx="397.7" cy="74.5" rx="3.2" ry="1.0" transform="rotate(1 397.7 74.5)" class="gal ghost"/>
+      <ellipse cx="584.1" cy="62.3" rx="2.7" ry="1.4" transform="rotate(40 584.1 62.3)" class="gal ghost"/>
+      <ellipse cx="416.3" cy="187.7" rx="2.4" ry="1.2" transform="rotate(79 416.3 187.7)" class="gal ghost"/>
+      <ellipse cx="547.7" cy="99.8" rx="1.9" ry="1.6" transform="rotate(17 547.7 99.8)" class="gal ghost"/>
+      <text x="10" y="232" class="small">distances guessed from colors</text>
+      <text x="340" y="232" class="small">distances calibrated precisely</text>
+      <line x1="10" y1="320" x2="300" y2="320" class="axis"/>
+      <polyline points="10.0,318.4 12.4,318.1 14.8,317.8 17.2,317.4 19.7,316.9 22.1,316.4 24.5,315.8 26.9,315.2 29.3,314.5 31.8,313.6 34.2,312.7 36.6,311.7 39.0,310.6 41.4,309.4 43.8,308.1 46.2,306.7 48.7,305.2 51.1,303.5 53.5,301.8 55.9,299.9 58.3,298.0 60.8,296.0 63.2,293.8 65.6,291.7 68.0,289.4 70.4,287.1 72.8,284.8 75.2,282.5 77.7,280.2 80.1,278.0 82.5,275.7 84.9,273.6 87.3,271.6 89.8,269.6 92.2,267.8 94.6,266.2 97.0,264.7 99.4,263.5 101.8,262.4 104.2,261.6 106.7,261.0 109.1,260.6 111.5,260.5 113.9,260.6 116.3,261.0 118.8,261.6 121.2,262.4 123.6,263.5 126.0,264.7 128.4,266.2 130.8,267.8 133.2,269.6 135.7,271.6 138.1,273.6 140.5,275.7 142.9,278.0 145.3,280.2 147.8,282.5 150.2,284.8 152.6,287.1 155.0,289.4 157.4,291.7 159.8,293.8 162.2,296.0 164.7,298.0 167.1,299.9 169.5,301.8 171.9,303.5 174.3,305.2 176.8,306.7 179.2,308.1 181.6,309.4 184.0,310.6 186.4,311.7 188.8,312.7 191.2,313.6 193.7,314.5 196.1,315.2 198.5,315.8 200.9,316.4 203.3,316.9 205.8,317.4 208.2,317.8 210.6,318.1 213.0,318.4 215.4,318.7 217.8,318.9 220.2,319.1 222.7,319.2 225.1,319.4 227.5,319.5 229.9,319.6 232.3,319.7 234.8,319.7 237.2,319.8 239.6,319.8 242.0,319.9 244.4,319.9 246.8,319.9 249.2,319.9 251.7,319.9 254.1,320.0 256.5,320.0 258.9,320.0 261.3,320.0 263.8,320.0 266.2,320.0 268.6,320.0 271.0,320.0 273.4,320.0 275.8,320.0 278.2,320.0 280.7,320.0 283.1,320.0 285.5,320.0 287.9,320.0 290.3,320.0 292.8,320.0 295.2,320.0 297.6,320.0 300.0,320.0" class="curve"/>
+      <polyline points="10.0,315.8 12.4,315.2 14.8,314.5 17.2,313.6 19.7,312.7 22.1,311.7 24.5,310.6 26.9,309.4 29.3,308.1 31.8,306.7 34.2,305.2 36.6,303.5 39.0,301.8 41.4,299.9 43.8,298.0 46.2,296.0 48.7,293.8 51.1,291.7 53.5,289.4 55.9,287.1 58.3,284.8 60.8,282.5 63.2,280.2 65.6,278.0 68.0,275.7 70.4,273.6 72.8,271.6 75.2,269.6 77.7,267.8 80.1,266.2 82.5,264.7 84.9,263.5 87.3,262.4 89.8,261.6 92.2,261.0 94.6,260.6 97.0,260.5 99.4,260.6 101.8,261.0 104.2,261.6 106.7,262.4 109.1,263.5 111.5,264.7 113.9,266.2 116.3,267.8 118.8,269.6 121.2,271.6 123.6,273.6 126.0,275.7 128.4,278.0 130.8,280.2 133.2,282.5 135.7,284.8 138.1,287.1 140.5,289.4 142.9,291.7 145.3,293.8 147.8,296.0 150.2,298.0 152.6,299.9 155.0,301.8 157.4,303.5 159.8,305.2 162.2,306.7 164.7,308.1 167.1,309.4 169.5,310.6 171.9,311.7 174.3,312.7 176.8,313.6 179.2,314.5 181.6,315.2 184.0,315.8 186.4,316.4 188.8,316.9 191.2,317.4 193.7,317.8 196.1,318.1 198.5,318.4 200.9,318.7 203.3,318.9 205.8,319.1 208.2,319.2 210.6,319.4 213.0,319.5 215.4,319.6 217.8,319.7 220.2,319.7 222.7,319.8 225.1,319.8 227.5,319.9 229.9,319.9 232.3,319.9 234.8,319.9 237.2,319.9 239.6,320.0 242.0,320.0 244.4,320.0 246.8,320.0 249.2,320.0 251.7,320.0 254.1,320.0 256.5,320.0 258.9,320.0 261.3,320.0 263.8,320.0 266.2,320.0 268.6,320.0 271.0,320.0 273.4,320.0 275.8,320.0 278.2,320.0 280.7,320.0 283.1,320.0 285.5,320.0 287.9,320.0 290.3,320.0 292.8,320.0 295.2,320.0 297.6,320.0 300.0,320.0" class="curve alt"/>
+      <polyline points="10.0,319.5 12.4,319.4 14.8,319.2 17.2,319.1 19.7,318.9 22.1,318.7 24.5,318.4 26.9,318.1 29.3,317.8 31.8,317.4 34.2,316.9 36.6,316.4 39.0,315.8 41.4,315.2 43.8,314.5 46.2,313.6 48.7,312.7 51.1,311.7 53.5,310.6 55.9,309.4 58.3,308.1 60.8,306.7 63.2,305.2 65.6,303.5 68.0,301.8 70.4,299.9 72.8,298.0 75.2,296.0 77.7,293.8 80.1,291.7 82.5,289.4 84.9,287.1 87.3,284.8 89.8,282.5 92.2,280.2 94.6,278.0 97.0,275.7 99.4,273.6 101.8,271.6 104.2,269.6 106.7,267.8 109.1,266.2 111.5,264.7 113.9,263.5 116.3,262.4 118.8,261.6 121.2,261.0 123.6,260.6 126.0,260.5 128.4,260.6 130.8,261.0 133.2,261.6 135.7,262.4 138.1,263.5 140.5,264.7 142.9,266.2 145.3,267.8 147.8,269.6 150.2,271.6 152.6,273.6 155.0,275.7 157.4,278.0 159.8,280.2 162.2,282.5 164.7,284.8 167.1,287.1 169.5,289.4 171.9,291.7 174.3,293.8 176.8,296.0 179.2,298.0 181.6,299.9 184.0,301.8 186.4,303.5 188.8,305.2 191.2,306.7 193.7,308.1 196.1,309.4 198.5,310.6 200.9,311.7 203.3,312.7 205.8,313.6 208.2,314.5 210.6,315.2 213.0,315.8 215.4,316.4 217.8,316.9 220.2,317.4 222.7,317.8 225.1,318.1 227.5,318.4 229.9,318.7 232.3,318.9 234.8,319.1 237.2,319.2 239.6,319.4 242.0,319.5 244.4,319.6 246.8,319.7 249.2,319.7 251.7,319.8 254.1,319.8 256.5,319.9 258.9,319.9 261.3,319.9 263.8,319.9 266.2,319.9 268.6,320.0 271.0,320.0 273.4,320.0 275.8,320.0 278.2,320.0 280.7,320.0 283.1,320.0 285.5,320.0 287.9,320.0 290.3,320.0 292.8,320.0 295.2,320.0 297.6,320.0 300.0,320.0" class="curve alt"/>
+      <polyline points="10.0,320.0 12.4,320.0 14.8,320.0 17.2,320.0 19.7,320.0 22.1,320.0 24.5,320.0 26.9,320.0 29.3,320.0 31.8,320.0 34.2,319.9 36.6,319.9 39.0,319.9 41.4,319.9 43.8,319.9 46.2,319.8 48.7,319.8 51.1,319.8 53.5,319.7 55.9,319.6 58.3,319.6 60.8,319.5 63.2,319.4 65.6,319.3 68.0,319.1 70.4,319.0 72.8,318.8 75.2,318.5 77.7,318.3 80.1,318.0 82.5,317.7 84.9,317.3 87.3,316.9 89.8,316.5 92.2,315.9 94.6,315.4 97.0,314.7 99.4,314.0 101.8,313.2 104.2,312.4 106.7,311.4 109.1,310.4 111.5,309.3 113.9,308.2 116.3,306.9 118.8,305.6 121.2,304.1 123.6,302.6 126.0,301.1 128.4,299.4 130.8,297.7 133.2,296.0 135.7,294.2 138.1,292.3 140.5,290.4 142.9,288.5 145.3,286.6 147.8,284.8 150.2,282.9 152.6,281.1 155.0,279.3 157.4,277.6 159.8,276.0 162.2,274.5 164.7,273.1 167.1,271.9 169.5,270.7 171.9,269.8 174.3,269.0 176.8,268.3 179.2,267.9 181.6,267.6 184.0,267.5 186.4,267.6 188.8,267.9 191.2,268.3 193.7,269.0 196.1,269.8 198.5,270.7 200.9,271.9 203.3,273.1 205.8,274.5 208.2,276.0 210.6,277.6 213.0,279.3 215.4,281.1 217.8,282.9 220.2,284.8 222.7,286.6 225.1,288.5 227.5,290.4 229.9,292.3 232.3,294.2 234.8,296.0 237.2,297.7 239.6,299.4 242.0,301.1 244.4,302.6 246.8,304.1 249.2,305.6 251.7,306.9 254.1,308.2 256.5,309.3 258.9,310.4 261.3,311.4 263.8,312.4 266.2,313.2 268.6,314.0 271.0,314.7 273.4,315.4 275.8,315.9 278.2,316.5 280.7,316.9 283.1,317.3 285.5,317.7 287.9,318.0 290.3,318.3 292.8,318.5 295.2,318.8 297.6,319.0 300.0,319.1" class="curve"/>
+      <polyline points="10.0,320.0 12.4,320.0 14.8,320.0 17.2,320.0 19.7,319.9 22.1,319.9 24.5,319.9 26.9,319.9 29.3,319.9 31.8,319.8 34.2,319.8 36.6,319.8 39.0,319.7 41.4,319.6 43.8,319.6 46.2,319.5 48.7,319.4 51.1,319.3 53.5,319.1 55.9,319.0 58.3,318.8 60.8,318.5 63.2,318.3 65.6,318.0 68.0,317.7 70.4,317.3 72.8,316.9 75.2,316.5 77.7,315.9 80.1,315.4 82.5,314.7 84.9,314.0 87.3,313.2 89.8,312.4 92.2,311.4 94.6,310.4 97.0,309.3 99.4,308.2 101.8,306.9 104.2,305.6 106.7,304.1 109.1,302.6 111.5,301.1 113.9,299.4 116.3,297.7 118.8,296.0 121.2,294.2 123.6,292.3 126.0,290.4 128.4,288.5 130.8,286.6 133.2,284.8 135.7,282.9 138.1,281.1 140.5,279.3 142.9,277.6 145.3,276.0 147.8,274.5 150.2,273.1 152.6,271.9 155.0,270.7 157.4,269.8 159.8,269.0 162.2,268.3 164.7,267.9 167.1,267.6 169.5,267.5 171.9,267.6 174.3,267.9 176.8,268.3 179.2,269.0 181.6,269.8 184.0,270.7 186.4,271.9 188.8,273.1 191.2,274.5 193.7,276.0 196.1,277.6 198.5,279.3 200.9,281.1 203.3,282.9 205.8,284.8 208.2,286.6 210.6,288.5 213.0,290.4 215.4,292.3 217.8,294.2 220.2,296.0 222.7,297.7 225.1,299.4 227.5,301.1 229.9,302.6 232.3,304.1 234.8,305.6 237.2,306.9 239.6,308.2 242.0,309.3 244.4,310.4 246.8,311.4 249.2,312.4 251.7,313.2 254.1,314.0 256.5,314.7 258.9,315.4 261.3,315.9 263.8,316.5 266.2,316.9 268.6,317.3 271.0,317.7 273.4,318.0 275.8,318.3 278.2,318.5 280.7,318.8 283.1,319.0 285.5,319.1 287.9,319.3 290.3,319.4 292.8,319.5 295.2,319.6 297.6,319.6 300.0,319.7" class="curve alt"/>
+      <polyline points="10.0,320.0 12.4,320.0 14.8,320.0 17.2,320.0 19.7,320.0 22.1,320.0 24.5,320.0 26.9,320.0 29.3,320.0 31.8,320.0 34.2,320.0 36.6,320.0 39.0,320.0 41.4,320.0 43.8,320.0 46.2,320.0 48.7,319.9 51.1,319.9 53.5,319.9 55.9,319.9 58.3,319.9 60.8,319.8 63.2,319.8 65.6,319.8 68.0,319.7 70.4,319.6 72.8,319.6 75.2,319.5 77.7,319.4 80.1,319.3 82.5,319.1 84.9,319.0 87.3,318.8 89.8,318.5 92.2,318.3 94.6,318.0 97.0,317.7 99.4,317.3 101.8,316.9 104.2,316.5 106.7,315.9 109.1,315.4 111.5,314.7 113.9,314.0 116.3,313.2 118.8,312.4 121.2,311.4 123.6,310.4 126.0,309.3 128.4,308.2 130.8,306.9 133.2,305.6 135.7,304.1 138.1,302.6 140.5,301.1 142.9,299.4 145.3,297.7 147.8,296.0 150.2,294.2 152.6,292.3 155.0,290.4 157.4,288.5 159.8,286.6 162.2,284.8 164.7,282.9 167.1,281.1 169.5,279.3 171.9,277.6 174.3,276.0 176.8,274.5 179.2,273.1 181.6,271.9 184.0,270.7 186.4,269.8 188.8,269.0 191.2,268.3 193.7,267.9 196.1,267.6 198.5,267.5 200.9,267.6 203.3,267.9 205.8,268.3 208.2,269.0 210.6,269.8 213.0,270.7 215.4,271.9 217.8,273.1 220.2,274.5 222.7,276.0 225.1,277.6 227.5,279.3 229.9,281.1 232.3,282.9 234.8,284.8 237.2,286.6 239.6,288.5 242.0,290.4 244.4,292.3 246.8,294.2 249.2,296.0 251.7,297.7 254.1,299.4 256.5,301.1 258.9,302.6 261.3,304.1 263.8,305.6 266.2,306.9 268.6,308.2 271.0,309.3 273.4,310.4 275.8,311.4 278.2,312.4 280.7,313.2 283.1,314.0 285.5,314.7 287.9,315.4 290.3,315.9 292.8,316.5 295.2,316.9 297.6,317.3 300.0,317.7" class="curve alt"/>
+      <text x="300" y="336" text-anchor="end" class="small">distance &#8594;</text>
+      <line x1="340" y1="320" x2="630" y2="320" class="axis"/>
+      <polyline points="340.0,320.0 342.4,320.0 344.8,320.0 347.2,320.0 349.7,320.0 352.1,320.0 354.5,320.0 356.9,320.0 359.3,320.0 361.8,320.0 364.2,320.0 366.6,320.0 369.0,320.0 371.4,320.0 373.8,320.0 376.2,320.0 378.7,320.0 381.1,320.0 383.5,320.0 385.9,320.0 388.3,320.0 390.8,319.9 393.2,319.8 395.6,319.5 398.0,318.9 400.4,318.0 402.8,316.3 405.2,313.7 407.7,309.7 410.1,304.3 412.5,297.3 414.9,289.0 417.3,280.0 419.8,271.2 422.2,263.8 424.6,258.8 427.0,257.0 429.4,258.8 431.8,263.8 434.2,271.2 436.7,280.0 439.1,289.0 441.5,297.3 443.9,304.3 446.3,309.7 448.8,313.7 451.2,316.3 453.6,318.0 456.0,318.9 458.4,319.5 460.8,319.8 463.2,319.9 465.7,320.0 468.1,320.0 470.5,320.0 472.9,320.0 475.3,320.0 477.8,320.0 480.2,320.0 482.6,320.0 485.0,320.0 487.4,320.0 489.8,320.0 492.2,320.0 494.7,320.0 497.1,320.0 499.5,320.0 501.9,320.0 504.3,320.0 506.8,320.0 509.2,320.0 511.6,320.0 514.0,320.0 516.4,320.0 518.8,320.0 521.2,320.0 523.7,320.0 526.1,320.0 528.5,320.0 530.9,320.0 533.3,320.0 535.8,320.0 538.2,320.0 540.6,320.0 543.0,320.0 545.4,320.0 547.8,320.0 550.2,320.0 552.7,320.0 555.1,320.0 557.5,320.0 559.9,320.0 562.3,320.0 564.8,320.0 567.2,320.0 569.6,320.0 572.0,320.0 574.4,320.0 576.8,320.0 579.2,320.0 581.7,320.0 584.1,320.0 586.5,320.0 588.9,320.0 591.3,320.0 593.8,320.0 596.2,320.0 598.6,320.0 601.0,320.0 603.4,320.0 605.8,320.0 608.2,320.0 610.7,320.0 613.1,320.0 615.5,320.0 617.9,320.0 620.3,320.0 622.8,320.0 625.2,320.0 627.6,320.0 630.0,320.0" class="curve"/>
+      <polyline points="340.0,320.0 342.4,320.0 344.8,320.0 347.2,320.0 349.7,320.0 352.1,320.0 354.5,320.0 356.9,320.0 359.3,320.0 361.8,320.0 364.2,320.0 366.6,320.0 369.0,320.0 371.4,320.0 373.8,320.0 376.2,320.0 378.7,320.0 381.1,320.0 383.5,320.0 385.9,320.0 388.3,320.0 390.8,320.0 393.2,320.0 395.6,320.0 398.0,320.0 400.4,320.0 402.8,320.0 405.2,320.0 407.7,320.0 410.1,320.0 412.5,320.0 414.9,320.0 417.3,320.0 419.8,320.0 422.2,320.0 424.6,320.0 427.0,320.0 429.4,320.0 431.8,320.0 434.2,320.0 436.7,320.0 439.1,320.0 441.5,320.0 443.9,320.0 446.3,320.0 448.8,319.9 451.2,319.8 453.6,319.5 456.0,318.9 458.4,318.0 460.8,316.3 463.2,313.7 465.7,309.7 468.1,304.3 470.5,297.3 472.9,289.0 475.3,280.0 477.8,271.2 480.2,263.8 482.6,258.8 485.0,257.0 487.4,258.8 489.8,263.8 492.2,271.2 494.7,280.0 497.1,289.0 499.5,297.3 501.9,304.3 504.3,309.7 506.8,313.7 509.2,316.3 511.6,318.0 514.0,318.9 516.4,319.5 518.8,319.8 521.2,319.9 523.7,320.0 526.1,320.0 528.5,320.0 530.9,320.0 533.3,320.0 535.8,320.0 538.2,320.0 540.6,320.0 543.0,320.0 545.4,320.0 547.8,320.0 550.2,320.0 552.7,320.0 555.1,320.0 557.5,320.0 559.9,320.0 562.3,320.0 564.8,320.0 567.2,320.0 569.6,320.0 572.0,320.0 574.4,320.0 576.8,320.0 579.2,320.0 581.7,320.0 584.1,320.0 586.5,320.0 588.9,320.0 591.3,320.0 593.8,320.0 596.2,320.0 598.6,320.0 601.0,320.0 603.4,320.0 605.8,320.0 608.2,320.0 610.7,320.0 613.1,320.0 615.5,320.0 617.9,320.0 620.3,320.0 622.8,320.0 625.2,320.0 627.6,320.0 630.0,320.0" class="curve"/>
+      <polyline points="340.0,320.0 342.4,320.0 344.8,320.0 347.2,320.0 349.7,320.0 352.1,320.0 354.5,320.0 356.9,320.0 359.3,320.0 361.8,320.0 364.2,320.0 366.6,320.0 369.0,320.0 371.4,320.0 373.8,320.0 376.2,320.0 378.7,320.0 381.1,320.0 383.5,320.0 385.9,320.0 388.3,320.0 390.8,320.0 393.2,320.0 395.6,320.0 398.0,320.0 400.4,320.0 402.8,320.0 405.2,320.0 407.7,320.0 410.1,320.0 412.5,320.0 414.9,320.0 417.3,320.0 419.8,320.0 422.2,320.0 424.6,320.0 427.0,320.0 429.4,320.0 431.8,320.0 434.2,320.0 436.7,320.0 439.1,320.0 441.5,320.0 443.9,320.0 446.3,320.0 448.8,320.0 451.2,320.0 453.6,320.0 456.0,320.0 458.4,320.0 460.8,320.0 463.2,320.0 465.7,320.0 468.1,320.0 470.5,320.0 472.9,320.0 475.3,320.0 477.8,320.0 480.2,320.0 482.6,320.0 485.0,320.0 487.4,320.0 489.8,320.0 492.2,320.0 494.7,320.0 497.1,320.0 499.5,320.0 501.9,320.0 504.3,320.0 506.8,319.9 509.2,319.8 511.6,319.5 514.0,318.9 516.4,318.0 518.8,316.3 521.2,313.7 523.7,309.7 526.1,304.3 528.5,297.3 530.9,289.0 533.3,280.0 535.8,271.2 538.2,263.8 540.6,258.8 543.0,257.0 545.4,258.8 547.8,263.8 550.2,271.2 552.7,280.0 555.1,289.0 557.5,297.3 559.9,304.3 562.3,309.7 564.8,313.7 567.2,316.3 569.6,318.0 572.0,318.9 574.4,319.5 576.8,319.8 579.2,319.9 581.7,320.0 584.1,320.0 586.5,320.0 588.9,320.0 591.3,320.0 593.8,320.0 596.2,320.0 598.6,320.0 601.0,320.0 603.4,320.0 605.8,320.0 608.2,320.0 610.7,320.0 613.1,320.0 615.5,320.0 617.9,320.0 620.3,320.0 622.8,320.0 625.2,320.0 627.6,320.0 630.0,320.0" class="curve"/>
+      <text x="630" y="336" text-anchor="end" class="small">distance &#8594;</text>
+      </svg>
+      <figcaption>Current surveys estimate distances to many faint galaxies from their colors, which leaves broad, uncertain distributions. Steel keeps a sparse subset of the same galaxies and takes spectra of a representative fraction of them, which calibrates the distance distribution of the whole sample.</figcaption>
+    </figure>
+    <p>
+      Weak lensing surveys measure the shapes of huge numbers of faint galaxies.
+      Their precision is limited less by the number of galaxies than by two kinds of systematic uncertainty:
+    </p>
+    <ul>
+      <li><b>Distances:</b> exactly how far away the source galaxies are (their <i>redshift distribution</i>).</li>
+      <li><b>Astrophysics:</b> galaxy shapes being lined up by their local environment rather than by lensing (<i>intrinsic alignments</i>), and processes like gas heated by supermassive black holes reshaping the distribution of matter on small scales.</li>
+    </ul>
+    <p>
+      We showed that once these are modeled realistically, the information in lensing analyses saturates on fairly large scales.
+      Source samples about 5 galaxies per square arcminute, much sparser than current surveys, lose almost no constraining power.
+      For a sample that sparse, a wide-field spectrograph like DESI can observe a large, representative subset.
+      Those spectra directly calibrate the sample's distances and intrinsic alignments, leaving far fewer uncertainties to model.
+    </p>
+    <p class="papers">
+      Key paper:
+      <a href="https://arxiv.org/abs/2603.10113">Steeling weak lensing source galaxy samples against systematics using wide field spectroscopy</a> (2026)
+    </p>
+  </section>
 
-  .nav {
-    word-spacing: 42px;
-    font-size: 120%;
-    margin: 20px 0;
-  }
+  <section class="project" id="eft">
+    <h2>Effective field theory for galaxies and lensing</h2>
+    <p class="lead">Fast, accurate predictions that use more of the data while staying robust to small-scale physics we don't fully understand.</p>
+    <figure>
+      <img src="images/heft.jpg" alt="Hybrid effective field theory: simulated matter fields used to build galaxy predictions" loading="lazy">
+      <figcaption>Hybrid effective field theory combines N-body simulations with perturbation theory.</figcaption>
+    </figure>
+    <p>
+      Models of large-scale structure usually come in two kinds.
+      <i>Perturbation theory</i> is fast and flexible but only works on large scales.
+      <i>N-body simulations</i>, which evolve billions of particles under gravity, capture small scales but are expensive.
+      With collaborators I developed <a href="https://arxiv.org/abs/2101.11014">hybrid effective field theory (HEFT)</a>, which combines the two.
+      Our public <a href="https://arxiv.org/abs/2303.09762">Aemulus &nu; emulator</a>, which includes massive neutrinos, is used in DESI, DES and ACT analyses.
+    </p>
+    <p>
+      More recently we introduced <a href="https://arxiv.org/abs/2510.18981">lensing counterterms</a>, which separate the large-scale cosmological signal in lensing from uncertain small-scale effects such as feedback from black holes, without discarding data.
+      Applied to public DES data at <a href="https://arxiv.org/abs/2603.28761">two-loop order</a>, this gives competitive constraints and no sign of the so-called S<sub>8</sub> tension, even when dark energy is allowed to evolve.
+      We have also worked out <a href="https://arxiv.org/abs/2510.13962">how many simulations</a> future HEFT emulators need.
+    </p>
+    <p class="papers">
+      Key papers:
+      <a href="https://arxiv.org/abs/2101.11014">HEFT</a> (2021) &middot;
+      <a href="https://arxiv.org/abs/2303.09762">Aemulus &nu;</a> (2023) &middot;
+      <a href="https://arxiv.org/abs/2510.18981">Lensing counterterms</a> (2025) &middot;
+      <a href="https://arxiv.org/abs/2603.28761">Two-loop cosmic shear</a> (2026)
+    </p>
+  </section>
 
-  .nav a {
-    color: #000;
-    text-decoration: none;
-  }
+  <section class="project" id="zcv">
+    <h2>Zel'dovich control variates</h2>
+    <p class="lead">Removing most of the noise from cosmological simulations with a simple, cheap companion calculation.</p>
+    <figure>
+      <img src="images/zcv.jpg" alt="Comparison of a full N-body simulation and its Zel'dovich approximation counterpart" loading="lazy">
+    </figure>
+    <p>
+      Simulations cover only finite patches of the universe, so their predictions carry statistical noise.
+      We pair each full simulation with a <i>Zel'dovich approximation</i> realization of the same initial conditions, a much simpler model in which particles move in straight lines.
+      Its statistics can be computed exactly, and it is highly correlated with the full simulation.
+      That lets us subtract most of the noise, using a classic statistical technique called <a href="https://arxiv.org/abs/2205.15327">control variates</a>.
+      The method is <a href="https://arxiv.org/abs/2210.14239">near-optimal</a> and is used in <a href="https://arxiv.org/abs/2308.12343">DESI analyses</a>.
+    </p>
+    <p class="papers">
+      Key papers:
+      <a href="https://arxiv.org/abs/2205.15327">Kokron et al.</a> (2022) &middot;
+      <a href="https://arxiv.org/abs/2210.14239">DeRose et al.</a> (2022)
+    </p>
+  </section>
 
-  .nav a:hover {
-    text-decoration: underline;
-  }
+  <section class="project" id="des">
+    <h2>The Dark Energy Survey</h2>
+    <p class="lead">Precision cosmology from the shapes and positions of hundreds of millions of galaxies.</p>
+    <figure>
+      <img src="images/desy3.jpg" alt="Dark Energy Survey Year 3 results" loading="lazy">
+    </figure>
+    <p>
+      <a href="https://www.darkenergysurvey.org/">DES</a> imaged 5,000 square degrees of sky to measure weak lensing and galaxy clustering.
+      I was heavily involved in the <a href="https://arxiv.org/abs/2105.13549">Year 3 cosmology analysis</a>, including <a href="https://arxiv.org/abs/2105.13547">validating it on simulations</a> before the real data were revealed.
+      It produced some of the tightest constraints yet on the growth of cosmic structure.
+    </p>
+  </section>
 
-  h2 {
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 18pt;
-    margin: 20px 0 15px 0;
-  }
+  <section class="project" id="sims">
+    <h2>Simulations and machine learning</h2>
+    <p class="lead">Realistic simulated universes and fast surrogate models that make modern analyses possible.</p>
+    <figure>
+      <img src="images/buzzard.jpg" alt="Slice through a Buzzard simulated galaxy catalog" loading="lazy">
+      <figcaption>A Buzzard mock galaxy catalog.</figcaption>
+    </figure>
+    <p>
+      Testing an analysis requires simulated skies where the right answer is known.
+      I built the <a href="https://arxiv.org/abs/1901.02401">Buzzard</a> mock catalogs used to validate DES and helped develop their successor, <a href="https://arxiv.org/abs/2303.12104">Cardinal</a>.
+      I also led the <a href="https://arxiv.org/abs/1804.05865">Aemulus</a> simulation suites.
+      I also use machine learning to speed up theory calculations, for example <a href="https://arxiv.org/abs/2112.05889">neural-network emulators</a> and the differentiable JAX code <a href="https://github.com/j-dr/gholax">gholax</a>.
+      This makes it practical to explore many cosmological models.
+    </p>
+    <p class="papers">See <a href="code.html">code &amp; data</a> for public releases.</p>
+  </section>
+</main>
 
-  .project {
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+<footer class="site">
+  jderose at bnl dot gov &middot; <a href="https://github.com/j-dr">github</a> &middot; <a href="https://scholar.google.com/citations?user=4SxA4A8AAAAJ">scholar</a> &middot; <a href="https://orcid.org/0000-0002-0728-0960">orcid</a> &middot; <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22DeRose%2C%20Joseph%22&amp;sort=date%20desc">ads</a>
+  <br>last updated october 2026
+</footer>
 
-  .project h2 {
-    text-align: center;
-    width: 100%;
-  }
-
-  .project p {
-    font-size: 12pt;
-    line-height: 1.8;
-    text-align: center;
-    max-width: 600px;
-    border: 2px solid #333;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    margin-top: 15px;
-  }
-
-  .monospace {
-    font-family: 'Consolas', 'Monaco', monospace;
-  }
-
-  .italic {
-    font-style: italic;
-  }
-
-  .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-
-  a {
-    color: #000;
-    text-decoration: none;
-    border-bottom: 1px solid #000;
-  }
-
-  a:hover {
-    background-color: #f0f0f0;
-  }
-
-  @media (max-width: 768px) {
-    .title {
-      width: 95%;
-    }
-
-    .nav {
-      word-spacing: 20px;
-      font-size: 100%;
-    }
-
-    .center {
-      width: 90%;
-    }
-  }
-</style>
-
-<div class="title">
-	<p class="nav monospace">
-	<a href="index.html">Home</a> <a href="research.html">Research</a> <a href="images/cv.pdf">CV</a> <a href="https://github.com/j-dr">Code</a>
-	</p>
 </div>
-
-<div class="title project">
-    <h2>Dark Energy Spectroscopic Instrument (DESI)</h2>
-	<p><img src="images/desi.jpg" width="500" alt="DESI project"/>
-        <a href="https://www.desi.lbl.gov/">DESI</a> is mapping the three-dimensional positions of tens of millions of galaxies over five years, providing unprecedented constraints on the expansion history of the universe.
-        I'm particularly focused on cross-correlating weak-gravitational lensing—the subtle bending of light as it travels through the universe—with DESI galaxy positions. This combination provides a powerful test of gravity and dark energy on cosmological scales.
-        We demonstrated the potential of this approach in a <a href="https://arxiv.org/abs/2111.09898">recent analysis</a> that cross-correlated DESI Early Data Release galaxy positions with weak lensing measurements from the Planck satellite, finding results consistent with general relativity and the standard cosmological model.
-	</p>
-</div>
-<br>
-<div class="title project">
-    <h2>The Dark Energy Survey (DES)</h2>
-    <p><img src="images/desy3.jpg" width="500" alt="Dark Energy Survey project"/>
-        <a href="https://www.darkenergysurvey.org/">DES</a> is a large-scale photometric survey spanning 5,000 square degrees that delivers precision cosmological constraints by measuring the weak gravitational lensing signatures imprinted on galaxy shapes by cosmic structures.
-        I have been heavily involved in many aspects of the cosmological analyses of the <a href="https://arxiv.org/abs/2105.13549">first three years of DES data</a>, including the three-by-two-point correlation analysis (combining galaxy clustering, galaxy lensing, and cosmic shear).
-        The DES Y3 results represent some of the tightest constraints on the growth of cosmic structure and the properties of dark energy, with implications for fundamental physics at the largest scales.
-	</p>
-</div>
-<br>
-
-<div class="title project">
-    <h2>Hybrid Effective Field Theory</h2>
-    <p><img src="images/heft.jpeg" width="500" alt="Hybrid Effective Field Theory visualization"/>
-        Historically, models for large-scale structure fall into two categories: perturbation theory-based approaches, which are analytically tractable and computationally fast but limited to quasi-linear scales; and simulation-based methods, which capture complex nonlinear physics but are computationally expensive and prone to noise from finite simulation volumes.
-        Along with collaborators, I developed <a href="https://arxiv.org/abs/2101.11014">Hybrid Effective Field Theory (HEFT)</a>, which combines the strengths of both approaches—leveraging simulation-calibrated perturbation theory to capture nonlinear effects accurately across a broad range of scales while maintaining analytical flexibility.
-        I released a <a href="https://arxiv.org/abs/2303.09762">public HEFT implementation</a> that includes sophisticated treatments of massive neutrino effects, which is now actively applied to cosmological analyses in DESI, DES, and ACT collaborations, enabling tighter constraints on fundamental physics.
-	</p>
-</div>
-<br>
-
-<div class="title project">
-    <h2>Zel'dovich Control Variates</h2>
-    <p><img src="images/zcv.jpg" width="500" alt="Zel'dovich Control Variates visualization"/>
-        A major limitation of cosmological simulations is the statistical uncertainty arising from simulating finite volumes—we can only simulate small patches of the universe, introducing noise in our predictions.
-        My collaborators and I developed a <a href="https://arxiv.org/abs/2210.14239">theoretically near-optimal</a> variance reduction technique based on <a href="https://arxiv.org/abs/2205.15327">control variates</a>, a classical statistical method.
-        The key insight is surprisingly simple: we run a full cosmological N-body simulation alongside a fast Zel&apos;dovich approximation—a linear theory where particles move in straight lines. Despite its simplicity, the Zel&apos;dovich simulation is highly correlated with the full simulation, and we can analytically predict its statistics.
-        By pairing these simulations, we can remove much of the noise from the full simulation, dramatically improving the precision of cosmological predictions. This technique is already enhancing our <a href="https://arxiv.org/abs/2308.12343">DESI analyses</a> and has broad applications across the field.
-	</p>
-</div>
-<br>
-
-
-<div class="title project">
-    <h2>ML Accelerated Simulations</h2>
-    <p><img src="images/buzzard.png" width="500" alt="ML Accelerated Simulations visualization"/>
-        Cosmology is fundamentally a simulation-dependent field—our ability to test theories about dark energy and gravity hinges on comparing observations to realistic predictions from N-body simulations of cosmic structure formation.
-        However, running high-resolution simulations across the range of physical models we need to explore remains computationally expensive. Much of my work focuses on leveraging modern machine learning and data science techniques to accelerate and enhance simulations.
-        This includes developing surrogate models that can quickly predict simulation outputs, improving the realism of simulations to better match observations from surveys like DESI and the CMB, and enabling faster exploration of parameter space to constrain fundamental physics.
-	</p>
-</div>
-<br>
-
 </body>
 </html>

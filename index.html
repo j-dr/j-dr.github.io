@@ -1,177 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Joseph DeRose - Assistant Scientist at Brookhaven National Laboratory, specializing in cosmology, dark energy, and large-scale structure.">
-    <title>Joseph DeRose - Cosmologist</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joseph DeRose</title>
+  <meta name="description" content="Joseph DeRose, cosmologist at Brookhaven National Laboratory, working on dark energy, gravity and the large-scale structure of the universe.">
+  <meta property="og:title" content="Joseph DeRose">
+  <meta property="og:description" content="Cosmologist at Brookhaven National Laboratory, working on dark energy, gravity and the large-scale structure of the universe.">
+  <meta property="og:image" content="images/headshot.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80' font-family='monospace'>jd</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
 
-<style type="text/css">
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+<header class="site">
+  <a class="name" href="index.html">Joseph DeRose</a>
+  <nav>
+    <ul>
+      <li><a href="index.html" aria-current="page">home</a></li>
+      <li><a href="research.html">research</a></li>
+      <li><a href="publications.html">publications</a></li>
+      <li><a href="students.html">students</a></li>
+      <li><a href="code.html">code &amp; data</a></li>
+      <li><a href="images/cv.pdf">cv</a></li>
+    </ul>
+  </nav>
+</header>
 
-  body {
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 12pt;
-    color: #000;
-    line-height: 1.6;
-    background: #fff;
-  }
+<main>
+  <div class="intro">
+    <img src="images/headshot.jpg" alt="Photo of Joseph DeRose" width="446" height="600">
+    <div>
+      <h1>Joseph DeRose</h1>
+      <p class="muted">Assistant Scientist, Brookhaven National Laboratory<br>Ph.D. Physics, Stanford University (2019)</p>
+      <p>
+        I study why the expansion of the universe is speeding up, and what that says about the fundamental building blocks of the Universe.
+        I build the models, simulations and statistical tools that turn maps of millions of galaxies into precise tests of fundamental physics.
+      </p>
+    </div>
+  </div>
 
-  .title {
-    text-align: center;
-    width: 800px;
-    max-width: 90%;
-    margin: 0 auto;
-  }
+  <h2>Currently</h2>
+  <ul>
+    <li>Combining <a href="https://www.desi.lbl.gov/">DESI</a> galaxy maps with weak gravitational lensing to measure how cosmic structure has grown over time.</li>
+    <li>Designing <a href="research.html#steel">Steel</a>: small, spectroscopically calibrated lensing samples that sidestep the largest systematic errors in weak lensing.</li>
+    <li>Developing effective field theory models of lensing that use more of the data without being biased by poorly understood small-scale astrophysics.</li>
+  </ul>
 
-  .title img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-  }
+  <h2>Collaborations</h2>
+  <p>Much of my science is made possible by large international collaborations I'm part of:</p>
+  <ul>
+    <li><a href="https://www.desi.lbl.gov/">Dark Energy Spectroscopic Instrument (DESI)</a></li>
+    <li><a href="https://lsstdesc.org/">Rubin Observatory LSST Dark Energy Science Collaboration (DESC)</a></li>
+    <li><a href="https://www.darkenergysurvey.org/">Dark Energy Survey (DES)</a></li>
+  </ul>
 
-  .nav {
-    word-spacing: 42px;
-    font-size: 120%;
-    margin: 20px 0;
-  }
+  <h2>News</h2>
+  <ul class="news">
+    <li><time datetime="2026-03">2026-03</time><a href="https://arxiv.org/abs/2603.10113">Steel paper</a> on spectroscopically calibrated lensing source samples is out.</li>
+    <li><time datetime="2026-03">2026-03</time>Two-loop EFT reanalysis of <a href="https://arxiv.org/abs/2603.28761">DES Y3 cosmic shear</a>: no S<sub>8</sub> tension.</li>
+    <li><time datetime="2025-10">2025-10</time>Released <a href="https://github.com/j-dr/gholax">gholax</a> alongside our <a href="https://arxiv.org/abs/2510.18981">lensing counterterms</a> paper.</li>
+  </ul>
 
-  .nav a {
-    color: #000;
-    text-decoration: none;
-  }
+  <h2>Get in touch</h2>
+  <p>
+    I work with students and early-career researchers at many levels. If you're interested in working together, see
+    <a href="students.html">prospective students</a>. For everything else, email me at <b>jderose at bnl dot gov</b>.
+  </p>
+  <p class="cta">
+    <a href="students.html">prospective students &rarr;</a>
+    <a href="images/cv.pdf">cv (pdf) &rarr;</a>
+  </p>
+</main>
 
-  .nav a:hover {
-    text-decoration: underline;
-  }
-
-  h1 {
-    font-size: 25pt;
-    margin: 20px 0;
-  }
-
-  .monospace {
-    font-family: 'Consolas', 'Monaco', monospace;
-  }
-
-  .italic {
-    font-style: italic;
-  }
-
-  .contact-info {
-    font-size: 12pt;
-    margin: 15px 0;
-  }
-
-  .contact-info a {
-    color: #000;
-    text-decoration: none;
-  }
-
-  .contact-info a:hover {
-    text-decoration: underline;
-  }
-
-  .position-info {
-    width: 700px;
-    max-width: 90%;
-    font-size: 12pt;
-    text-align: center;
-    margin: 20px auto;
-    line-height: 1.8;
-  }
-
-  .position-info b {
-    font-weight: bold;
-  }
-
-  .bio {
-    width: 800px;
-    max-width: 90%;
-    font-size: 12pt;
-    margin: 0 auto;
-    text-align: justify;
-    line-height: 1.8;
-    border: 2px solid #333;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-  }
-
-  .bio a {
-    color: #000;
-    text-decoration: none;
-    border-bottom: 1px solid #000;
-  }
-
-  .bio a:hover {
-    background-color: #e8e8e8;
-  }
-
-  @media (max-width: 768px) {
-    .title, .position-info, .bio {
-      width: 95%;
-    }
-
-    .nav {
-      word-spacing: 20px;
-      font-size: 100%;
-    }
-  }
-</style>
-
-<div class="title">
-	<p class="nav monospace">
-	<a href="index.html">Home</a> <a href="research.html">Research</a> <a href="images/cv.pdf">CV</a> <a href="https://github.com/j-dr">Code</a>
-	</p>
-</div>
-
-
-<div class="title">
-    <h1 class="monospace">Joseph DeRose</h1>
-    <img src="images/headshot.jpg" alt="Joseph DeRose" width="300"/>
-    <br>
-    <br>
-    <p class="contact-info monospace">
-      <b><span class="italic">email</span></b>: jderose at bnl dot gov
-      <br>
-      <b><span class="italic">github</span></b>: <a href="https://github.com/j-dr/">github.com/j-dr</a>
-      <br>
-    </p>
-</div>
-
-
-<div class="position-info monospace">
-  <b>Current position:</b> Assistant Scientist, Brookhaven National Laboratory
-  <br>
-  <b>Education:</b> Ph.D., Physics, Stanford University (2019)
-  <br>
-  <b>Research interests:</b>
-</div>
-
-
-<div class="bio monospace">
-<br>
-What is the physics governing the accelerated expansion of the universe, dark matter and cosmic inflation?
-I use a combination of cosmological data-analysis, simulation and theory to distill massive galaxy survey
-and cosmic microwave background data sets into insight into these questions.
-
-<br>
-<br>
-Much of the science I do is enabled by the contributions of scientists in a number of large collaborations, including the <a href="https://www.darkenergysurvey.org/">Dark Energy Survey</a>,
-<a href="https://www.desi.lbl.gov/">Dark Energy Spectroscopic Instrument</a> and the <a href="https://lsstdesc.org/">Rubin Observatory Legacy Survey of Space and Time Dark Energy Science Collaboration</a>.
-
-<br>
-<br>
+<footer class="site">
+  jderose at bnl dot gov &middot; <a href="https://github.com/j-dr">github</a> &middot; <a href="https://scholar.google.com/citations?user=4SxA4A8AAAAJ">scholar</a> &middot; <a href="https://orcid.org/0000-0002-0728-0960">orcid</a> &middot; <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22DeRose%2C%20Joseph%22&amp;sort=date%20desc">ads</a>
+  <br>last updated october 2026
+</footer>
 
 </div>
-
-  </body>
+</body>
 </html>
